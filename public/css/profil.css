@@ -1,0 +1,326 @@
+/* Container Utama Hero */
+.dmi-hero-center {
+    background-image: url('../img/tentang/profil/gedung-dmi.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Menggunakan tinggi layar penuh */
+    position: relative;
+    width: 100%;
+}
+
+/* Overlay Hijau Solid Presisi Tengah */
+.dmi-overlay-green {
+    background-color: rgba(28, 28, 28, 0.697); /* Hijau DMI pekat */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;             /* Mengaktifkan flexbox */
+    justify-content: center;    /* Tengah secara horizontal */
+    align-items: center;        /* Tengah secara vertikal */
+    text-align: center;         /* Tengah teks */
+}
+
+/* Konten Hero */
+.dmi-hero-content {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif; /* Pastikan font ini diimport */
+}
+
+.dmi-pre-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.dmi-main-title {
+    font-size: 4rem; /* Ukuran besar sesuai gambar */
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 auto 20px;
+    text-transform: uppercase;
+}
+
+.dmi-tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Bagian Deskripsi Bawah */
+.dmi-profile-body {
+    padding: 60px 0;
+    background: #e5e9ecc1;
+}
+
+.dmi-description-box {
+    max-width: 800px;
+    margin: 0 auto; /* Menengahkah container teks */
+}
+
+.dmi-section-heading {
+     display: flex;             /* Mengaktifkan flexbox */
+    justify-content: center;    /* Tengah secara horizontal */
+    align-items: center;        /* Tengah secara vertikal */
+    text-align: center;         /* Tengah teks */
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.dmi-line-center {
+    width: 60px;
+    height: 5px;
+    background-color: #215a28;
+    margin: 0 auto 30px; /* Garis ditaruh di tengah */
+    border-radius: 10px;
+}
+
+.dmi-main-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #4a5568;
+    text-align: center; /* Teks deskripsi ditaruh di tengah */
+}
+
+@media (max-width: 768px) {
+    .dmi-hero-center {
+        height: auto;
+        min-height: 80vh; /* Sedikit lebih pendek di tablet/HP agar user tahu ada konten di bawah */
+    }
+    
+    .dmi-main-title {
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dmi-profile-body {
+        padding: 40px 15px;
+    }
+    
+    .dmi-main-text {
+        text-align: justify; /* Terkadang teks panjang lebih rapi justify di layar sangat sempit */
+        text-align-last: center; /* Tapi baris terakhir tetap di tengah */
+    }
+}
+
+.dmi-container {
+    max-width: 1100px;
+    margin: 40 auto;
+    margin-bottom: 60px;
+}
+
+/* Header Styling */
+.main-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.main-header h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.main-header h1 span {
+    display: block;
+    font-weight: 700;
+    color: #2d5a27; /* Hijau Khas */
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background: #d4af37; /* Gold accent */
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Styling pembungkus Ikon + Judul */
+.card-header {
+    display: flex;
+    align-items: center; /* Sejajar tengah secara vertikal */
+    gap: 15px;           /* Jarak antara ikon dan teks */
+    margin-bottom: 20px;
+}
+
+.card-header i {
+    font-size: 2rem;   /* Ukuran ikon */
+    flex-shrink: 0;      /* Ikon tidak akan gepeng jika teks panjang */
+}
+
+.card-header h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.card-icon {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    font-size: 1.25rem;
+    padding-top: 16px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    font-size: 0.85rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* Card Variations (Soft Colors) */
+.card-yellow { border-top: 5px solid #f1c40f; }
+.card-green { border-top: 5px solid #27ae60; }
+.card-green-dark { border-top: 5px solid #1e5d3d; }
+.card-orange { border-top: 5px solid #e67e22; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-header h1 { font-size: 2rem; }
+    .card { padding: 30px; }
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dmi-impact-section {
+    padding: 80px 0;
+    background-color: #e5e9ecc1;; /* Abu-abu sangat muda agar kontras dengan card putih sebelumnya */
+}
+
+.impact-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Membagi dua kolom tidak rata */
+    gap: 60px;
+    align-items: center;
+}
+
+.sub-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(45, 90, 39, 0.1);
+    color: #2d5a27;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.impact-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.impact-title span {
+    display: block;
+    color: #2d5a27;
+    font-weight: 800;
+}
+
+.impact-desc {
+    font-size: 1.1rem;
+    color: #636e72;
+    line-height: 1.8;
+}
+
+/* Kolom Fitur */
+.impact-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: #2d5a27;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    .impact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .impact-content {
+        text-align: center;
+    }
+    .impact-title { font-size: 2rem; }
+}

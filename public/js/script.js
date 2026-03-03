@@ -1,0 +1,273 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    // 1. Logika Klik Dropdown
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+
+        link.addEventListener('click', function(e) {
+            // Cek jika link memiliki dropdown (mencegah link biasa terblokir)
+            if (this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown-content')) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isActive = dropdown.classList.contains('is-active');
+
+                // Tutup dropdown lain yang sedang terbuka
+                dropdowns.forEach(d => d.classList.remove('is-active'));
+
+                // Toggle class aktif
+                if (!isActive) {
+                    dropdown.classList.add('is-active');
+                }
+            }
+        });
+    });
+
+    // 2. Klik di luar Navbar untuk menutup menu
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.navbar')) {
+            dropdowns.forEach(d => d.classList.remove('is-active'));
+            // Opsional: Tutup menu mobile juga jika klik luar
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+
+    // 3. Fungsi Hamburger Mobile
+    window.toggleMenu = function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    };
+});
+
+// CAROUSEL //
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const footerItems = document.querySelectorAll('.footer-item');
+
+function showSlide(index) {
+    if (index >= slides.length) currentSlideIndex = 0;
+    if (index < 0) currentSlideIndex = slides.length - 1;
+
+    slides.forEach(s => s.classList.remove('active'));
+    footerItems.forEach(f => f.classList.remove('active'));
+
+    slides[currentSlideIndex].classList.add('active');
+    footerItems[currentSlideIndex].classList.add('active');
+}
+
+function changeSlide(n) {
+    currentSlideIndex += n;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(n) {
+    currentSlideIndex = n;
+    showSlide(currentSlideIndex);
+}
+
+// Auto Play (Ganti setiap 5 detik)
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+
+// Deklarasi variabel yang benar
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const footerItems = document.querySelectorAll('.footer-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    let currentIdx = 0;
+    let autoSlideInterval;
+
+    function showSlide(n) {
+        // Hapus class active dari semua slide
+        slides.forEach(s => s.classList.remove('active'));
+        
+        // Hitung index (handling looping)
+        currentIdx = (n + slides.length) % slides.length;
+        
+        // Tambahkan class active ke slide tujuan
+        slides[currentIdx].classList.add('active');
+        
+        resetTimer();
+    }
+
+    // Event Listeners untuk Tombol
+    prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
+
+    // Event Listeners untuk Footer Items
+    footerItems.forEach((item, idx) => {
+        item.addEventListener('click', () => showSlide(idx));
+    });
+
+    // Auto Slide
+    function startTimer() {
+        autoSlideInterval = setInterval(() => {
+            showSlide(currentIdx + 1);
+        }, 8000);
+    }
+
+    function resetTimer() {
+        clearInterval(autoSlideInterval);
+        startTimer();
+    }
+
+    // Inisialisasi
+    startTimer();
+});
+
+
+// =========================
+// KALENDER
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Deklarasi Elemen
+    const monthDisplay = document.getElementById('monthDisplay');
+    const calendarGrid = document.getElementById('calendarGrid');
+    const prevBtn = document.getElementById('prevMonth');
+    const nextBtn = document.getElementById('nextMonth');
+
+    // 2. State Data
+    let currentDate = new Date(); // Default ke hari ini
+
+    const monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+
+    const eventDatabase = {
+        // Januari 2026 (00)
+        "2026-00-07": { title: "Grand Islamic Gathering", tag: "Event", time: "11:59 WIB", loc: "Gedung DMI Pusat" },
+        "2026-00-15": { title: "Pelatihan Manajemen Masjid", tag: "Edukasi", time: "09:00 WIB", loc: "Aula Utama" },
+        "2026-00-28": { title: "Rapat Pleno Awal Tahun", tag: "Rapat", time: "13:00 WIB", loc: "Ruang Rapat Lt.3" },
+
+        // Februari 2026 (01)
+        "2026-01-05": { title: "Kajian Ekonomi Syariah", tag: "Kajian", time: "16:00 WIB", loc: "Masjid Agung" },
+        "2026-01-12": { title: "Bakti Sosial Nasional", tag: "Sosial", time: "08:00 WIB", loc: "Area Jabodetabek" },
+        "2026-01-20": { title: "Workshop Digital Dakwah", tag: "Edukasi", time: "10:00 WIB", loc: "Zoom Meeting" },
+        "2026-01-25": { title: "Silaturahmi Pengurus Daerah", tag: "Rapat", time: "19:30 WIB", loc: "Hotel Sultan" },
+
+        // Maret 2026 (02)
+        "2026-02-03": { title: "Persiapan Tarhib Ramadhan", tag: "Event", time: "10:00 WIB", loc: "Gedung DMI Pusat" }
+    };
+
+    // 3. Fungsi Utama Render Kalender
+    function renderCalendar() {
+        calendarGrid.innerHTML = '';
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+
+        // Tampilkan Nama Bulan
+        monthDisplay.innerText = `${monthNames[month]} ${year}`;
+
+        // Kalkulasi Hari
+        let firstDay = new Date(year, month, 1).getDay();
+        firstDay = (firstDay === 0) ? 6 : firstDay - 1; 
+
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+        // Render Tanggal Muted (Bulan Lalu)
+        for (let i = firstDay; i > 0; i--) {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'cal-day muted';
+            dayDiv.innerText = daysInPrevMonth - i + 1;
+            calendarGrid.appendChild(dayDiv);
+        }
+
+        // Render Tanggal Aktif
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'cal-day';
+            dayDiv.innerText = d;
+
+            const dateKey = `${year}-${String(month).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+            
+            if (eventDatabase[dateKey]) {
+                dayDiv.classList.add('has-event');
+                dayDiv.innerHTML = `${d} <span class="event-dot"></span>`;
+            }
+
+            // Highlight Hari Ini
+            const today = new Date();
+            if (d === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                dayDiv.classList.add('active');
+                updateSidebar(eventDatabase[dateKey] || null, d, month, year);
+            }
+
+            dayDiv.addEventListener('click', () => {
+                document.querySelectorAll('.cal-day').forEach(el => el.classList.remove('active'));
+                dayDiv.classList.add('active');
+                updateSidebar(eventDatabase[dateKey] || null, d, month, year, true); // True untuk animasi
+            });
+
+            calendarGrid.appendChild(dayDiv);
+        }
+    }
+
+    // 4. Fungsi Update Sidebar dengan Animasi
+    function updateSidebar(data, d, m, y, animate = false) {
+        const eventCard = document.querySelector('.selected-event-card');
+        const sidebarTitle = document.querySelector('.sel-info h4');
+        const sidebarDate = document.querySelector('.sel-date');
+        const sidebarTag = document.querySelector('.sel-tag');
+        const sidebarTime = document.querySelector('.sel-meta p:nth-child(1)');
+        const sidebarLoc = document.querySelector('.sel-meta p:nth-child(2)');
+
+        const updateContent = () => {
+            if (data) {
+                sidebarTitle.innerText = data.title;
+                sidebarTag.innerText = data.tag;
+                sidebarTag.style.display = "inline-block";
+                sidebarDate.innerText = `${String(d).padStart(2, '0')} ${monthNames[m]} ${y}`;
+                sidebarTime.innerHTML = `<i class="far fa-clock"></i> ${data.time}`;
+                sidebarLoc.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${data.loc}`;
+            } else {
+                sidebarTitle.innerText = "Tidak Ada Kegiatan";
+                sidebarTag.style.display = "none";
+                sidebarDate.innerText = `${String(d).padStart(2, '0')} ${monthNames[m]} ${y}`;
+                sidebarTime.innerHTML = `<i class="far fa-clock"></i> --:--`;
+                sidebarLoc.innerHTML = `<i class="fas fa-map-marker-alt"></i> -`;
+            }
+        };
+
+        if (animate) {
+            eventCard.style.opacity = "0";
+            eventCard.style.transform = "translateY(10px)";
+            setTimeout(() => {
+                updateContent();
+                eventCard.style.opacity = "1";
+                eventCard.style.transform = "translateY(0)";
+            }, 200);
+        } else {
+            updateContent();
+        }
+    }
+
+    // 5. Event Listeners Navigasi dengan Animasi Slide
+    prevBtn.addEventListener('click', () => {
+        calendarGrid.classList.remove('cal-slide-next', 'cal-slide-prev');
+        void calendarGrid.offsetWidth; 
+        calendarGrid.classList.add('cal-slide-prev');
+
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        calendarGrid.classList.remove('cal-slide-next', 'cal-slide-prev');
+        void calendarGrid.offsetWidth; 
+        calendarGrid.classList.add('cal-slide-next');
+
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    });
+
+    // Jalankan pertama kali
+    renderCalendar();
+});

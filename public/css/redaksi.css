@@ -1,0 +1,403 @@
+:root {
+    --dmi-green: #215a28;
+    --dmi-dark: #1e293b;
+    --bg-soft: #ffffff;
+    --card-cream: #fffdf5;
+}
+
+.redaksi-section {
+    padding: 40px 20px;
+    background: var(--bg-soft);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Styling - Match image_c2df56.png */
+.main-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--dmi-dark);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: var(--dmi-green);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.period-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    border: 1px solid #dcfce7;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #166534;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.header-line {
+    width: 60px;
+    height: 4px;
+    background: #cbd5e1;
+    margin: 30px auto 0;
+    border-radius: 2px;
+}
+
+/* Executive Cards */
+.executive-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.card-exec {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 40px;
+    width: 420px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.235);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-exec:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.26);
+    border-color: #6767672c;
+}
+
+.image-circle {
+    width: 160px;
+    height: 160px;
+    background: #f8fafc;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: #cbd5e1;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dmi-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.card-info .role {
+    color: var(--dmi-green);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Section Divider */
+.section-label {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-label span {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dmi-dark);
+}
+
+/* Members Grid */
+/* Container Utama untuk Member */
+.members-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Menjaga kartu tetap di tengah */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.members-flex-container2{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr); /* Memaksa 3 kolom */
+        gap: 20px;
+        max-width: 1200px;
+        width: 600px;
+        margin: 0 auto;
+    }
+/* KUNCI POSISI: Mengatur lebar kartu */
+.card-member-minimal {
+    background: #fffdf5; /* Warna krem sesuai gambar */
+    border: 1px solid #f1f1e6;
+    height: 120px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.272);
+    transition: 0.3s;
+    
+    /* Menghitung lebar agar pas 4 kartu di baris pertama */
+    flex: 0 1 calc(25% - 20px); 
+    min-width: 120px;
+}
+.card-member-minimal2 {
+    background: #fffdf5; /* Warna krem sesuai gambar */
+    border: 1px solid #f1f1e6;
+    height: 140px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.272);
+    transition: 0.3s;
+    
+    /* Menghitung lebar agar pas 4 kartu di baris pertama */
+    flex: 0 1 calc(25% - 20px); 
+    min-width: 180px;
+}
+
+/* Mengatur 5 kartu di baris bawah */
+/* Kita targetkan 5 kartu terakhir (index 5 sampai 9) */
+.card-member-minimal:nth-child(n+5) {
+    flex: 0 1 calc(20% - 20px);
+}
+.card-member-minimal2:nth-child(n+5) {
+    flex: 0 1 calc(20% - 20px);
+}
+
+.card-member-minimal:hover {
+    background: white;
+    border-color: #215a28;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.272);
+    transform: translateY(-5px);
+}
+.card-member-minimal2:hover {
+    background: white;
+    border-color: #215a28;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.272);
+    transform: translateY(-5px);
+}
+
+.member-avatar-box {
+    font-size: 55px;
+    color: #64748b;
+    margin: 15px 0;
+}
+
+.card-member-minimal h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+    margin: 0;
+}
+/* Container Utama */
+.team-section {
+    padding: 20px 20px;
+    padding-bottom: 80px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.team-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr); /* 2 Kolom sejajar di desktop */
+    gap: 50px;align-items: stretch; /* Memastikan semua kolom memiliki tinggi yang sama */
+}
+.team-column{
+    display: flex;
+    flex-direction: column  ;
+}
+
+/* Judul Role (Editor / IT) */
+.role-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a2b3c; /* Warna gelap sesuai gambar */
+    margin-bottom: 30px;
+}
+
+/* Styling Kartu */
+.member-card {
+    background-color: #fdfbf2; /* Warna krem pucat sesuai gambar */
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.272);
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon (User) */
+.icon-wrapper {
+    font-size: 60px; /* Ukuran icon besar */
+    color: #5d6d7e; /* Warna abu-abu kebiruan */
+    margin-bottom: 15px;
+}
+
+/* Nama Member */
+.member-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom di mobile */
+        gap: 15px; /* Perkecil jarak antar kolom agar tidak sesak */
+    }
+
+    .role-title {
+        font-size: 1.5rem; /* Perkecil ukuran judul Role */
+        margin-bottom: 15px;
+    }
+
+    .member-card {
+        padding: 20px 10px; /* Kurangi padding dalam kartu */
+        border-radius: 12px; /* Border radius lebih kecil agar proporsional */
+    }
+
+    .icon-wrapper {
+        font-size: 40px; /* Kecilkan ukuran icon user */
+        margin-bottom: 10px;
+    }
+
+    .member-name {
+        font-size: 0.85rem; /* Kecilkan ukuran nama agar tidak pecah baris berlebihan */
+        line-height: 1.2;
+    }
+}
+
+/* Tambahan khusus untuk layar sangat kecil (di bawah 360px) */
+@media (max-width: 360px) {
+    .team-container {
+        gap: 10px;
+    }
+    
+    .member-name {
+        font-size: 0.75rem;
+    }
+}
+/* Tablet & Desktop Layout */
+@media (min-width: 992px) {
+    .card-exec {
+        flex: 0 1 450px;
+    }
+}
+
+/* KUNCI PERUBAHAN MOBILE */
+@media (max-width: 768px) {
+    /* Header Header diperkecil agar tidak memakan ruang */
+    .main-title { font-size: 1.4rem; }
+    .sub-title { font-size: 1rem; }
+    .period-badge { padding: 6px 20px; font-size: 0.75rem; }
+
+    /* Executive Section: Jadi 2 Grid Berdampingan */
+    .executive-wrapper {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .card-exec {
+        flex: 0 1 calc(50% - 10px); /* Membagi 2 kolom */
+        min-width: 0; /* Override min-width sebelumnya */
+        padding: 20px 10px;
+        border-radius: 12px;
+    }
+
+    .image-circle {
+        width: 70px;  /* Ukuran foto diperkecil untuk mobile */
+        height: 70px;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .card-info h3 {
+        font-size: 0.85rem; /* Font nama diperkecil */
+        margin-bottom: 4px;
+    }
+
+    .card-info .role {
+        font-size: 0.75rem;
+    }
+
+    /* Dewan Redaksi Section: Jadi 3 Grid */
+    .section-label span {
+        font-size: 1.4rem;
+    }
+
+    .members-flex-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Memaksa 3 kolom */
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .members-flex-container2 {
+        display: flex;             /* Ubah dari grid ke flex agar bisa dempet */
+        justify-content: center;    /* Pusatkan kartu */
+        flex-wrap: nowrap;         /* Pastikan tetap satu baris */
+        gap: 10px;                 /* Jarak antar kartu, kecilkan jika mau lebih dempet */
+        width: 100%;               /* Gunakan full width */
+        max-width: 400px;          /* Batasi lebar maksimal agar kartu tidak menjauh */
+        margin: 0 auto;            /* Pusatkan kontainernya */
+        padding: 0 10px;
+    }
+    .section-misah{
+        display: flex;
+        gap: -100px;
+        flex-direction: row; /* Mengatur tumpukan section jika diperlukan */
+    }
+    .card-member-minimal, 
+    .card-member-minimal:nth-child(n+5) {
+        flex: none; /* Matikan flex agar mengikuti grid */
+        width: 50%;
+        padding: 15px 5px;
+    }
+    .card-member-minimal2, 
+    .card-member-minimal2:nth-child(n+5) {
+        flex: none; /* Matikan flex agar mengikuti grid */
+        width: 50%;
+        padding: 15px 5px;
+    }
+
+    .member-avatar-box {
+        font-size: 35px; /* Icon member diperkecil */
+        margin-bottom: 8px;
+    }
+
+    .card-member-minimal h4 {
+        font-size: 0.7rem; /* Font nama member sangat kecil agar tidak wrap */
+        letter-spacing: -0.2px;
+    }
+    .card-member-minimal2 h4 {
+        font-size: 0.7rem; /* Font nama member sangat kecil agar tidak wrap */
+        letter-spacing: -0.2px;
+    }
+}
+
+/* Khusus layar sangat kecil (iPhone SE dsb) */
+@media (max-width: 380px) {
+    .card-info h3 { font-size: 0.75rem; }
+    .card-member-minimal h4 { font-size: 0.65rem; }
+}
