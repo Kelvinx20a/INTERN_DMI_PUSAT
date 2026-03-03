@@ -12,11 +12,14 @@ use App\Http\Controllers\BeritaController;
 
 Route::get('/migrate-database', function () {
     try {
-        // Ini perintah untuk menjalankan php artisan migrate secara otomatis
-        Artisan::call('migrate', ["--force" => true]);
-        return "Sukses: " . Artisan::output();
+        // Cek koneksi dasar dulu
+        DB::connection()->getPdo();
+        
+        $output = Artisan::call('migrate', ["--force" => true]);
+        return "<h1>Migrasi Berhasil!</h1><pre>" . Artisan::output() . "</pre>";
     } catch (\Exception $e) {
-        return "Gagal: " . $e->getMessage();
+        // Tampilkan error sedetail mungkin
+        return "<h1>Waduh, Gagal Connect:</h1><pre>" . $e->getMessage() . "</pre>";
     }
 });
 
