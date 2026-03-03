@@ -10,6 +10,15 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\RedaksiController;
 use App\Http\Controllers\BeritaController;
 
+Route::get('/migrate-database', function () {
+    try {
+        // Ini perintah untuk menjalankan php artisan migrate secara otomatis
+        Artisan::call('migrate', ["--force" => true]);
+        return "Sukses: " . Artisan::output();
+    } catch (\Exception $e) {
+        return "Gagal: " . $e->getMessage();
+    }
+});
 
 Route::get('/',[HomeController::class, 'index']);
 
