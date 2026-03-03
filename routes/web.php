@@ -10,18 +10,6 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\RedaksiController;
 use App\Http\Controllers\BeritaController;
 
-Route::get('/migrate-database', function () {
-    try {
-        // Cek koneksi dasar dulu
-        DB::connection()->getPdo();
-        
-        $output = Artisan::call('migrate', ["--force" => true]);
-        return "<h1>Migrasi Berhasil!</h1><pre>" . Artisan::output() . "</pre>";
-    } catch (\Exception $e) {
-        // Tampilkan error sedetail mungkin
-        return "<h1>Waduh, Gagal Connect:</h1><pre>" . $e->getMessage() . "</pre>";
-    }
-});
 
 Route::get('/',[HomeController::class, 'index']);
 
