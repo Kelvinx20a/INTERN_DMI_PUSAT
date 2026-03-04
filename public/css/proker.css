@@ -758,7 +758,8 @@
 
 /* --- EKONOMI & SOSIAL SECTION --- */
 .dmi-eco-social {
-    padding: 120px 0;
+    padding: 70px 0;
+    margin-bottom: 100px;
     background: #fdfdfd;
     position: relative;
     overflow: hidden;
@@ -892,4 +893,105 @@
 @media (max-width: 600px) {
     .frame-top, .frame-bottom { width: 90%; position: relative; height: 250px; margin-bottom: -50px; left: 0; right: 0; }
     .eco-visual-composition { height: auto; display: flex; flex-direction: column; }
+}
+
+/* --- TRAINING SECTION STYLING --- */
+.dmi-training-section {
+    padding: 80px 0;
+    margin-bottom: 100px;
+    background: #ffffff;
+}
+
+.training-header { margin-bottom: 50px; }
+
+.training-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Visual Card Side */
+.main-training-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    height: 550px;
+}
+
+.main-training-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.main-training-card:hover img { transform: scale(1.05); }
+
+.training-overlay-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(6, 78, 59, 0.95), transparent);
+    color: white;
+}
+
+.live-tag {
+    background: #ef4444;
+    padding: 8px 12px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.live-tag i {  margin: 10px 0; font-size: 0.5rem; vertical-align: middle; margin-right: 5px; animation: blink 1s infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Program List Side */
+.training-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.program-card {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.program-card:hover {
+    background: white;
+    border-color: #215a28;
+    box-shadow: 0 10px 25px rgba(33, 90, 40, 0.1);
+    transform: translateX(10px);
+}
+
+.program-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(33, 90, 40, 0.2);
+    transition: 0.3s;
+}
+
+.program-card:hover .program-num { color: #215a28; }
+
+.program-desc h4 { color: #1a202c; margin: 0 0 5px; font-size: 1.15rem; }
+.program-desc p { color: #64748b; font-size: 0.9rem; margin: 0; line-height: 1.5; }
+
+.program-arrow { margin-left: auto; color: #cbd5e1; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .training-grid-wrapper { grid-template-columns: 1fr; }
+    .main-training-card { height: 400px; }
 }

@@ -16,6 +16,7 @@ Route::get('/',[HomeController::class, 'index']);
 
 Route::get('/Program Kerja/Program Kerja Dewan Masjid Indonesia',[ProkerDMIController::class, 'index']);
 Route::get('/Program Kerja/Pengembangan Ekonomi dan Sosial',[ProkerDMIController::class, 'index2']);
+Route::get('/Program Kerja/Pelatihan Fungsi Ke-Masjidan',[ProkerDMIController::class, 'index3']);
 
 
 Route::get('/Program Kerja/Hasil Rapat Kerja Nasional 2025',[HasilRapatKerjaController::class, 'index']);
