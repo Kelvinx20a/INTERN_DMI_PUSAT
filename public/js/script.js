@@ -1,3 +1,7 @@
+// =======================
+// Navbar
+// =======================
+
 document.addEventListener("DOMContentLoaded", function() {
     const dropdowns = document.querySelectorAll('.dropdown');
     const hamburger = document.querySelector('.hamburger');
@@ -43,7 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 
-// CAROUSEL //
+
+//================//
+// CAROUSEL HOME //
+// =============//
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const footerItems = document.querySelectorAll('.footer-item');
@@ -125,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // =========================
 // KALENDER
+//==========================
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Deklarasi Elemen
     const monthDisplay = document.getElementById('monthDisplay');
@@ -271,3 +279,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Jalankan pertama kali
     renderCalendar();
 });
+
+

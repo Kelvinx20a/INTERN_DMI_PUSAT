@@ -47,4 +47,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ---------------
 // Section Baru
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".news-card-v3");
 
+    const observerOptions = {
+        threshold: 0.12, // Kartu muncul jika 10% bagiannya terlihat
+        rootMargin: "0px 0px -20px 0px" // Muncul sedikit sebelum benar-benar terlihat
+    };
+
+   const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                // Kita lepas observer-nya supaya animasi cuma jalan sekali (lebih enteng)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        revealObserver.observe(card);
+    });
+});

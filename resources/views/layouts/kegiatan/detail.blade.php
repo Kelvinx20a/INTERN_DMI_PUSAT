@@ -10,7 +10,7 @@
         
         <header class="ev-header-area">
             <div class="ev-nav-wrapper">
-                <a href="#" class="btn-back-dynamic">
+                <a href="/Kegiatan/Kalender Event" class="btn-back-dynamic">
                     <i class="fas fa-chevron-left"></i> 
                     <span>Kembali ke Agenda</span>
                 </a>

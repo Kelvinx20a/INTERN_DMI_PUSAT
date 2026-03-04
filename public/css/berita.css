@@ -365,6 +365,12 @@
 
 /* --- Card Consistency --- */
 .news-card-v3 {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: 
+        opacity 0.9s ease-in-out, 
+        transform 0.9s ease-out;
+    will-change: transform, opacity; /* Optimasi performa browser */
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
@@ -374,6 +380,16 @@
     transition: 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
 }
+/* Keadaan setelah muncul (class ini akan ditambah oleh JS) */
+.news-card-v3.reveal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Staggered Delay: Agar munculnya berurutan cantik (1-2-3) */
+.news-modern-grid-v3 article:nth-child(3n+1) { transition-delay: 0.1s; }
+.news-modern-grid-v3 article:nth-child(3n+2) { transition-delay: 0.25s; }
+.news-modern-grid-v3 article:nth-child(3n+3) { transition-delay: 0.4s; }
 
 .news-card-v3:hover {
     transform: translateY(-12px);
@@ -504,4 +520,7 @@
     .meta-top { font-size: 0.65rem; }
     .badge-tag { font-size: 0.55rem; padding: 3px 8px; top: 8px; left: 8px; }
     .btn-read-simple { font-size: 0.75rem; }
+
+    .news-modern-grid-v3 article:nth-child(odd) { transition-delay: 0.1s; }
+    .news-modern-grid-v3 article:nth-child(even) { transition-delay: 0.25s; }
 }

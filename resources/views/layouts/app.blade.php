@@ -27,7 +27,7 @@
             @php 
                 $link = ""; 
                 // Daftarkan segment induk yang TIDAK memiliki halaman (non-clickable)
-                $disabledSegments = ['kegiatan', 'kategori', 'program']; 
+                $disabledSegments = ['program kerja', 'Tentang Kami', 'kegiatan', 'redaksi']; 
             @endphp
 
             @foreach(request()->segments() as $segment)

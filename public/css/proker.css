@@ -377,8 +377,109 @@
 }
 
 /* ========================================== */
-/* PROKER dan HASIL RAPAT */
+/* PENATAAN ORGANISASI */
 /* ========================================= */
+/* --- MODERN ORG SECTION (BENTO LAYOUT) --- */
+.dmi-modern-org {
+    padding: 60px 0;
+    margin-bottom: 100px;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+.org-intro { text-align: center; margin-bottom: 50px; }
+.text-success { color: #215a28; }
+
+/* Bento Grid System */
+.org-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #eee;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95); /* Keadaan awal Reveal */
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.bento-item:hover img { transform: scale(1.08); }
+
+/* Bento Positioning */
+.main-feat { grid-column: span 2; grid-row: span 2; } /* Gambar Pak JK besar */
+.wide-feat { grid-column: span 2; grid-row: span 1; } /* Gambar Muktamar lebar */
+.tall-feat { grid-column: span 2; grid-row: span 1; } /* Gambar Digitalisasi */
+
+/* Caption Styling */
+.bento-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.bento-caption .tag {
+    background: #215a28;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bento-caption h4 { margin: 10px 0 5px; font-size: 1.25rem; }
+
+/* Feature Cards */
+.org-features-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feat-card {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #eef0f2;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.feat-card:hover { background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+.feat-icon { color: #215a28; font-size: 2rem; margin-bottom: 15px; }
+
+/* REVEAL CLASS */
+.reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* RESPONSIVE MOBILE (PENTING) */
+@media (max-width: 992px) {
+    .org-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .main-feat, .wide-feat, .tall-feat { 
+        grid-column: span 1; 
+        height: 300px; 
+    }
+    .org-features-row { grid-template-columns: 1fr; }
+}
 
 /* ========================================= */
 /* HALAMAN AKUSTIK MASJID */
@@ -650,5 +751,145 @@
         width: 100%;
     }
 }
+
 /* ========================================= */
-/* END SECTION PREVIEW CARD PDF */
+/* HALAMAN PENGEMBANGAN EKONOMI DAN SOSIAL */
+/* ========================================= */
+
+/* --- EKONOMI & SOSIAL SECTION --- */
+.dmi-eco-social {
+    padding: 120px 0;
+    background: #fdfdfd;
+    position: relative;
+    overflow: hidden;
+}
+
+.eco-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Content Styling */
+.eco-lead {
+    font-size: 1.15rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 25px 0 40px;
+}
+
+.eco-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.eco-item {
+    display: flex;
+    gap: 15px;
+}
+
+.eco-dot {
+    width: 8px;
+    height: 8px;
+    background: #215a28;
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.eco-item h4 { margin: 0 0 5px; color: #1a202c; font-size: 1.1rem; }
+.eco-item p { margin: 0; font-size: 0.95rem; color: #64748b; }
+
+/* Stats Grid */
+.eco-stats {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.stat-num { font-size: 2rem; font-weight: 800; color: #215a28; display: block; }
+.stat-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Visual Collage (Sisi Kanan) */
+.eco-visual-composition {
+    position: relative;
+    height: 600px;
+}
+
+.img-frame {
+    position: absolute;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border: 8px solid #fff;
+    transition: transform 0.5s ease;
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.frame-top {
+    width: 80%;
+    height: 350px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.frame-bottom {
+    width: 75%;
+    height: 320px;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.frame-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #215a28;
+}
+
+/* Hover Interaktif */
+.img-frame:hover {
+    transform: translateY(-15px) scale(1.02);
+    z-index: 10;
+}
+
+/* Decorative Blob */
+.eco-blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: rgba(33, 90, 40, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .eco-layout-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .eco-visual-composition { height: 500px; }
+    .eco-stats { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+    .frame-top, .frame-bottom { width: 90%; position: relative; height: 250px; margin-bottom: -50px; left: 0; right: 0; }
+    .eco-visual-composition { height: auto; display: flex; flex-direction: column; }
+}
