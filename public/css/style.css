@@ -10,6 +10,7 @@
 /* Menghilangkan scrollbar untuk IE, Edge, dan Firefox */
 html, body {
     -ms-overflow-style: none;  /* IE and Edge */
+    scroll-behavior: smooth;
     scrollbar-width: none;  /* Firefox */
 }
    * {
@@ -131,13 +132,14 @@ html, body {
     column-gap: 40px;
     column-rule: 1px solid rgba(255,255,255,0.1);
     z-index: 1000;
+    
 }
 
 /* --- Active State (Triggered by JS) --- */
 .dropdown.is-active .dropdown-content {
     display: block;
     opacity: 1;
-    animation: fadeInSlide 0.3s ease-out;
+    animation: fadeInSlide 5s ease-out;
 }
 
 .dropdown.is-active .arrow {
@@ -237,52 +239,178 @@ html, body {
 /* ==========================================================================
    7. HERO SECTION
    ========================================================================== */
-.hero {
-    position: relative;
-    width: 100%;
+/* ======================================================
+1. GLOBAL SETUP & VARIABLES
+======================================================
+*/
+:root {
+    --dmi-green: #215a28;
+    --dmi-green-dark: #16401c;
+    --dmi-gold: #f1c40f;
+    --dmi-gold-soft: #fef9e7;
+    --dark: #0f172a;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --bg-light: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.8);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container-custom {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* ======================================================
+2. HERO PREMIUM SECTION
+======================================================
+*/
+.hero-premium {
     height: 100vh;
-    background: url('../img/home/hero-banner.jpg') no-repeat center center/cover;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.509);
 }
 
-.overlay {
+.hero-bg-wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-zoom-bg {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
+    object-fit: cover;
+    filter: brightness(0.6);
+    animation: zoomSlow 20s infinite alternate ease-in-out;
 }
 
-.hero-content {
-    position: relative;
+/* @keyframes zoomSlow {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+} */
+
+.hero-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(75deg, rgba(15, 23, 42, 0.9) 20%, rgba(33, 90, 40, 0.3) 100%);
     z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
 }
 
-.hero h1 { font-size: 3.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; }
-.hero h2 { font-size: 1.5rem; font-weight: 300; font-style: italic; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; max-width: 700px; line-height: 1.6; }
+.hero-inner {
+    position: relative;
+    z-index: 10;
+    color: var(--white);
+}
+
+.hero-tag {
+    background: var(--dmi-green);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(33, 90, 40, 0.3);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #fff, var(--dmi-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 45px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-glow {
+    background: var(--dmi-green);
+    color: var(--white);
+    padding: 18px 42px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 20px rgba(33, 90, 40, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(33, 90, 40, 0.6);
+    background: var(--dmi-green-dark);
+}
+
+.btn-play-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.btn-play-circle:hover {
+    background: var(--white);
+    color: var(--dmi-green);
+    transform: scale(1.1);
+}
 
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
-    .hero h2 { font-size: 1.2rem; }
-    .hero p { font-size: 1rem; }
+    
+    .c-mini-item { flex-direction: column; text-align: center; gap: 10px; }
 }
 
-/* ==========================================================================
-   8. ANIMATIONS
-   ========================================================================== */
-@keyframes fadeInSlide {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
 /* ==========================================================================
    CAROUSEL HOME
@@ -293,7 +421,7 @@ html, body {
 }
 
 .news-section {
-    padding: 60px 0;
+    padding: 100px 0;
     background-color: #f9f9f9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -312,7 +440,8 @@ html, body {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.63);
+
 }
 
 .carousel-main {
@@ -396,7 +525,6 @@ html, body {
 .footer-label {
     display: flex;
     align-items: center;
-    gap: 15px;
     font-size: 0.75rem;
     color: var(--dmi-gold);
     margin-bottom: 15px;
@@ -406,8 +534,9 @@ html, body {
 
 .footer-grid {
     display: grid;
+    padding: 5px 0px;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 60px;
 }
 
 .footer-item { cursor: pointer; transition: 0.3s; padding: 5px; border-radius: 4px; }

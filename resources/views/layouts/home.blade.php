@@ -4,20 +4,31 @@
   @extends('layouts.app')
     @section('content')
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Dewan Masjid Indonesia</h1>
-      <h2>Menyatukan Masjid, Menguatkan Umat</h2>
-      <p>Menjadi pusat inspirasi, kolaborasi, dan harmoni bagi seluruh masjid di Indonesia,
-         membangun peradaban yang berlandaskan iman dan kebersamaan.</p>
+    <section class="hero-premium">
+    <div class="hero-bg-wrapper">
+        <img src="../img/home/hero-banner.jpg" alt="DMI Background" class="hero-zoom-bg">
+        <div class="hero-overlay-gradient"></div>
     </div>
-  </section>
+    
+    <div class="container-custom hero-inner js-reveal">
+        <div class="hero-tag">Official Website</div>
+        <h1 class="hero-title">Dewan Masjid <span class="text-gradient">Indonesia</span></h1>
+        <p class="hero-subtitle">Menyatukan Masjid, Menguatkan Umat. Membangun peradaban yang berlandaskan iman dan kebersamaan di seluruh penjuru negeri.</p>
+        <div class="hero-actions">
+            <a href="#carousel" class="btn-glow">Jelajahi Program <i class="fas fa-arrow-right"></i></a>
+            <a href="/Redaksi/Berita" style="text-decoration: none;"><button class="btn-play-circle" id="openVideo"><i class="fas fa-play"></i></button></a>
+        </div>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+        <div class="mouse"></div>
+    </div>
+</section>
   <!-- End Hero Section -->
 
 
   <!-- Carousel -->
-<section class="news-section">
+<section id="carousel" class="news-section">
     <div class="news-container">
         <div class="news-left">
             <div class="carousel-wrapper">
@@ -49,6 +60,16 @@
                     <div class="footer-label">
                         <span>WARTA MASJID</span>
                         <div class="line"></div>
+                    </div>
+                    <div class="footer-grid">
+                        <div class="footer-item" data-index="0">
+                            <h4>Pelatihan Teknisi Akustik Masjid Regional Sumatera</h4>
+                            <p>Program Kerja | 8 jam yang lalu</p>
+                        </div>
+                        <div class="footer-item" data-index="1">
+                            <h4>Sosialisasi Sertifikasi Tanah Wakaf bersama ATR/BPN</h4>
+                            <p>Legalitas | 12 jam yang lalu</p>
+                        </div>
                     </div>
                     <div class="footer-grid">
                         <div class="footer-item" data-index="0">

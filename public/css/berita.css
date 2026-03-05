@@ -378,7 +378,8 @@
     flex-direction: column; /* Mengatur susunan konten secara vertikal */
     height: 100%; /* Memaksa card mengisi ruang grid yang tersedia */
     transition: 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.285);
+
 }
 /* Keadaan setelah muncul (class ini akan ditambah oleh JS) */
 .news-card-v3.reveal {
@@ -392,8 +393,9 @@
 .news-modern-grid-v3 article:nth-child(3n+3) { transition-delay: 0.4s; }
 
 .news-card-v3:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    transform: translateY(-15px);
+    transition: 150ms;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.409);
 }
 
 /* --- Image Consistency (Aspect Ratio) --- */
