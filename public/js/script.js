@@ -129,6 +129,38 @@ document.addEventListener('DOMContentLoaded', function() {
     startTimer();
 });
 
+// =========================
+// Contact Us
+//==========================
+document.addEventListener('DOMContentLoaded', function() {
+    const mapPlaceholder = document.getElementById('mapPlaceholder');
+    const mapContainer = document.getElementById('mapIframeContainer');
+    
+    // Alamat Google Maps
+    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.81956135000001!3d-6.194741299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTEnNDEuMSJTIDEwNsKwNDknMTAuNCJF!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid";
+
+    if (mapPlaceholder) {
+        mapPlaceholder.addEventListener('click', function() {
+            // Tambahkan iframe secara dinamis saat diklik
+            mapContainer.innerHTML = `<iframe src="${mapUrl}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+            
+            // Sembunyikan placeholder
+            mapPlaceholder.classList.add('fade-out');
+        });
+    }
+
+    // LOGIKA REVEAL UNTUK BAGIAN LAIN (Carousel, News, dll)
+    // Pastikan class .js-reveal TIDAK ada di section contact agar tidak terpengaruh
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.js-reveal').forEach(el => observer.observe(el));
+});
 
 // =========================
 // KALENDER

@@ -381,8 +381,8 @@ body {
 
 .btn-glow:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(33, 90, 40, 0.6);
-    background: var(--dmi-green-dark);
+    box-shadow: 0 15px 30px rgb(33, 90, 40);
+    background: #2eb43e;
 }
 
 .btn-play-circle {
@@ -421,7 +421,7 @@ body {
 }
 
 .news-section {
-    padding: 100px 0;
+    padding: 120px 0;
     background-color: #f9f9f9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -431,7 +431,7 @@ body {
     margin: 0 auto;
     display: flex;
     gap: 30px;
-    padding: 0 20px;
+    padding: 0 80px;
 }
 
 .news-left { flex: 7; }
@@ -647,24 +647,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
-    background-color: #f4f4f4; /* Warna background agar kontras */
 }
 
 /* Kartu video dengan batas lebar maksimal */
 .video-card {
+    box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.368);
     width: 100%;
-    max-width: 900px; /* Ukuran video dikecilkan ke 900px */
-    background: #ffffff;
-    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.video-card:hover {
-    transform: translateY(-5px); /* Efek melayang saat kursor di atasnya */
-}
+    /* .video-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.368);
+    } */
 
 /* Rasio Video 16:9 */
 .video-box {
@@ -682,35 +678,6 @@ body {
     border: none;
 }
 
-/* Bagian teks di bawah video */
-.video-description {
-    padding: 20px;
-    text-align: center;
-}
-
-.video-tag {
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #215a28;
-    background: #eef5ee;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-}
-
-.video-description h3 {
-    margin: 12px 0 8px;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.video-description p {
-    font-size: 0.9rem;
-    color: #777;
-    line-height: 1.4;
-    margin: 0;
-}
-
 /* Penyesuaian untuk layar HP */
 @media (max-width: 480px) {
     .video-card {
@@ -719,176 +686,231 @@ body {
 }
 
 /* Contact Section */
-.contact-section {
-    padding: 80px 20px;
-    background-color: #cecece;
-    margin-bottom: 40px;
-    font-family: 'Roboto', sans-serif;
+:root {
+    --dmi-green: #1b4332;
+    --dmi-green-light: #2d6a4f;
+    --dmi-accent: #f1c40f;
+    --soft-bg: #f8fafc;
+    --white: #ffffff;
+    --bg-light: #fdfdfd;
+    --card-shadow: 0 15px 35px -5px rgba(27, 67, 50, 0.08);
+    --card-hover-shadow: 0 25px 50px -10px rgba(27, 67, 50, 0.15);
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-container {
-    max-width: 1200px;
+/* Container Wide - Mencegah tampilan nyempit di tengah */
+.container-wide {
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
-.contact-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-    color: #000;
+.contact-premium-v4 { 
+    padding: 120px 0; 
+    background: var(--bg-light); 
 }
 
-.contact-content {
-    display: flex;
-    gap: 30px;
+/* Header Styling */
+.header-content { text-align: center; margin-bottom: 80px; }
+.accent-tag { 
+    background: rgba(27, 67, 50, 0.1); color: var(--dmi-green);
+    padding: 10px 25px; border-radius: 100px; font-weight: 800; font-size: 0.85rem;
+    letter-spacing: 2px; text-transform: uppercase;
+}
+.title-modern { font-size: 3.5rem; font-weight: 900; margin-top: 25px; color: #0f172a; line-height: 1.1; }
+.text-dmi { color: var(--dmi-green); }
+
+/* Bento Layout - Wide Setting */
+.bento-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 1.1fr; /* Rasio seimbang untuk layar lebar */
+    gap: 40px; 
     align-items: stretch;
 }
 
-/* Bagian Peta */
-.contact-map {
-    flex: 1;
-    min-height: 450px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+/* MAPS STYLING */
+.map-wrapper { 
+    height: 500px; /* Diperbesar agar seimbang dengan wide container */
+    position: relative; border-radius: 45px; 
+    overflow: hidden; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.12); 
+    background: #e5e7eb;
+}
+.map-placeholder {
+    position: absolute; inset: 0; z-index: 5;
+    background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), 
+                url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80');
+    background-size: cover; display: flex; align-items: center; justify-content: center;
+    color: white; text-align: center; transition: var(--transition);
+}
+.map-placeholder.fade-out { opacity: 0; pointer-events: none; }
+.btn-load-map {
+    margin-top: 15px; padding: 14px 35px; border-radius: 15px;
+    border: none; background: var(--dmi-accent); color: var(--dmi-green);
+    font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 1rem;
+}
+.pulse-icon { font-size: 3.5rem; margin-bottom: 15px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+
+.map-iframe-hidden { width: 100%; height: 100%; }
+
+/* Info Grid Styling */
+.info-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
 }
 
-/* Bagian Kartu */
-.contact-cards {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.info-card {
-    background: #FFFAF0; /* Warna krem pucat sesuai gambar */
-    border: 1px solid #eee;
-    border-radius: 20px;
+/* Premium Card Styles */
+.premium-card {
+    position: relative;
+    background: var(--white);
+    border-radius: 35px;
+    padding: 30px; /* Padding diperbesar agar kartu lebih gagah */
+    text-decoration: none;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    gap: 25px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: var(--card-shadow);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.info-card:hover {
-    transform: translateY(-5px);
+.grid-sub-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+/* Glass Effect Overlay */
+.card-glass-effect {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(27,67,50,0.04) 0%, transparent 70%);
+    opacity: 0; transition: 0.5s; pointer-events: none;
+}
+.premium-card:hover .card-glass-effect { opacity: 1; transform: scale(1.1); }
+
+/* Icon Wrapper */
+.card-icon-wrap {
+    width: 80px; height: 80px;
+    background: #f0fdf4;
+    color: var(--dmi-green);
+    border-radius: 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; transition: 0.4s;
+    flex-shrink: 0;
+}
+.card-icon-wrap.sm { width: 60px; height: 60px; font-size: 1.5rem; border-radius: 18px; }
+
+/* Text Content */
+.card-label { font-size: 0.8rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; }
+.premium-card h3 { font-size: 1.8rem; color: #1e293b; margin-top: 6px; font-weight: 900; }
+.premium-card h4 { font-size: 1.2rem; color: #1e293b; margin-top: 4px; font-weight: 800; }
+
+/* Hover Animations */
+.premium-card:hover {
+    transform: translateY(-12px) translateX(10px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: rgba(27,67,50,0.15);
+}
+.premium-card:hover .card-icon-wrap {
+    background: var(--dmi-green);
+    color: white;
+    transform: rotate(-8deg) scale(1.1);
 }
 
-.info-card .icon {
-    font-size: 2rem;
-    color: #000;
-    margin-bottom: 15px;
+.card-action-icon {
+    margin-left: auto; width: 50px; height: 50px;
+    background: #f8fafc; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #cbd5e1; transition: 0.4s;
+}
+.premium-card:hover .card-action-icon {
+    background: var(--dmi-accent);
+    color: var(--dmi-green);
+    transform: rotate(-45deg);
 }
 
-.info-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #000;
-}
+.card-details-row { display: flex; align-items: center; gap: 15px; }
 
-.info-card p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0;
-}
+/* Animation Classes */
+.js-reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
+.reveal-active { opacity: 1; transform: translateY(0); }
 
-/* Responsif Mobile */
+/* --- RESPONSIVE MOBILE --- */
+/* --- RESPONSIVE 2-COLUMN GRID (MOBILE) --- */
+
 @media (max-width: 992px) {
-    .contact-content {
-        flex-direction: column;
-        gap: 20px;
+    .container-wide { padding: 0 25px; }
+    .bento-layout { 
+        grid-template-columns: 1fr; /* Stack Map & Cards */
+        gap: 30px; 
     }
-    .contact-map {
-        flex: none; /* Menghapus flex 1 agar tinggi manual bekerja */
-        height: 300px;
-        min-height: auto;
-        width: 100%;
-        order: 1; /* Memastikan peta berada di paling atas */
+    .header-content{
+        margin-bottom: 40px;
     }
-    .contact-cards {
-        flex: none;
-        order: 2; /* Kartu kontak berada di bawah peta */
-        grid-template-columns: repeat(2, 1fr); /* Tetap 4 kartu (2x2) */
-        gap: 15px;
+    .map-wrapper { height: 400px; order: 2; }
+    .info-grid { order: 1; width: 100%; }
+    .title-modern{
+        font-size: 2.2rem;
     }
 }
 
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 40px 15px; /* Kurangi padding section di mobile */
+/* --- RESPONSIVE 2-COLUMN GRID (MOBILE) --- */
+
+@media (max-width: 576px) {
+    /* Paksa container mengabaikan pembungkus sub-row */
+    .info-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 
-    .contact-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
+    .grid-sub-row {
+        display: contents !important; /* Supaya Email & IG ikut grid induk */
     }
 
-    /* Tetap menjaga Grid tetap 2 kolom (total 4 kartu) */
-    .contact-cards {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; /* Perkecil jarak antar kartu */
+    /* Reset semua kartu agar seragam */
+    .premium-card {
+        grid-column: span 1 !important;
+        flex-direction: column !important; /* Ikon di atas */
+        align-items: center !important;
+        text-align: center !important;
+        padding: 20px 10px !important;
+        min-height: 160px !important; /* Paksa tinggi yang sama */
+        justify-content: center !important;
+        gap: 8px !important;
+        border-radius: 20px !important;
     }
 
-    .info-card {
-        padding: 15px 10px; /* Perkecil padding dalam kartu */
-        border-radius: 15px;
+    /* Samakan semua icon wrap */
+    .card-icon-wrap, 
+    .card-icon-wrap.sm {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.1rem !important;
+        margin: 0 auto 5px auto !important;
     }
 
-    .info-card .icon {
-        font-size: 1.5rem; /* Perkecil icon */
-        margin-bottom: 8px;
+    /* Samakan detail teks */
+    .card-details, 
+    .card-details-row {
+        display: block !important;
+        width: 100% !important;
     }
 
-    .info-card h3 {
-        font-size: 0.9rem; /* Perkecil judul kartu */
+    .premium-card h3, 
+    .premium-card h4 {
+        font-size: 0.8rem !important;
+        margin: 4px 0 0 0 !important;
+        word-break: break-all !important; /* Penting untuk teks panjang */
     }
 
-    .info-card p {
-        font-size: 0.75rem; /* Perkecil teks keterangan */
-        line-height: 1.2;
-    }
-}
-
-/* Hapus atau ganti aturan 480px Anda yang sebelumnya grid-template-columns: 4fr */
-@media (max-width: 480px) {
-    .contact-section {
-        padding: 40px 15px;
-    }
-
-    .contact-title {
-        font-size: 1.5rem;
-        margin-bottom: 25px;
-    }
-
-    .contact-map {
-        height: 250px; /* Sedikit lebih pendek di layar sangat kecil */
-        border-radius: 15px;
-    }
-
-    .contact-cards {
-        gap: 10px; /* Merapatkan jarak kartu di layar HP kecil */
-    }
-
-    .info-card {
-        padding: 20px 10px; /* Penyesuaian padding kartu agar muat */
-    }
-
-    .info-card h3 {
-        font-size: 0.95rem;
-    }
-
-    .info-card p {
-        font-size: 0.8rem;
+    /* Hapus elemen yang bikin tidak konsisten */
+    .card-action-icon, 
+    .fa-external-link-alt,
+    .ms-auto {
+        display: none !important;
     }
 }
-
 
 /* ========================================================== */
 /* footer */

@@ -995,3 +995,248 @@
     .training-grid-wrapper { grid-template-columns: 1fr; }
     .main-training-card { height: 400px; }
 }
+
+/* ====================================================== */
+/* SECTION: PROGRAM LINGKUNGAN (MASJID HIJAU)    */
+/* ====================================================== */
+
+/* Definisi Container agar tidak lebar 0 */
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.dmi-eco-clean {
+    padding: 100px 0;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- REVEAL SYSTEM (Penyebab error sebelumnya) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header */
+.eco-header-minimal {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.eco-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #fff;
+    height: 200px;
+    background-color: #215a28;
+}
+.eco-tag span{
+    padding: 20px;
+}
+
+.eco-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 15px 0;
+    color: #1a202c;
+}
+
+.eco-divider {
+    width: 60px;
+    height: 4px;
+    background: #215a28;
+    margin: 0 auto;
+}
+
+/* Hero Banner */
+.eco-hero-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 60px;
+    background: #f0f0f0; /* Fallback warna jika gambar lambat */
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-label {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgb(255, 255, 255);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Grid & Cards */
+.eco-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.eco-card-min {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.411);
+}
+
+/* Kasih delay agar card muncul bergantian */
+.eco-card-min:nth-child(2) { transition-delay: 0.2s; }
+.eco-card-min:nth-child(3) { transition-delay: 0.4s; }
+
+.card-img-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.card-info-min { padding: 30px; }
+
+.card-category {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #215a28;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-info-min h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+/* Progress Bar */
+.progress-bar-wrap {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #215a28;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+/* Hover */
+.eco-card-min:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 255, 47, 0.352);
+}
+
+.eco-card-min:hover .card-img-box img { transform: scale(1.1); }
+
+/* Responsive */
+/* ====================================================== */
+/* RESPONSIVE MOBILE REFINEMENT                          */
+/* ====================================================== */
+/* ====================================================== */
+/* RESPONSIVE: FORCED 3-COLUMN GRID                       */
+/* ====================================================== */
+
+@media (max-width: 992px) {
+    /* Tetap paksa 3 kolom */
+    .eco-progress-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Perkecil jarak antar card agar muat */
+    }
+
+    .container-custom {
+        padding: 0 10px; /* Tipiskan padding samping kontainer */
+    }
+
+    /* Kecilkan padding dalam card */
+    .card-info-min {
+        padding: 15px 10px;
+    }
+
+    /* Perkecil font agar tidak overflow/patah berantakan */
+    .card-info-min h3 {
+        font-size: 0.85rem; /* Font jauh lebih kecil agar muat satu baris */
+        margin-bottom: 10px;
+        white-space: nowrap; /* Mencegah teks turun ke bawah */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Kasih titik-titik jika teks kepanjangan */
+    }
+
+    .card-category {
+        font-size: 0.55rem;
+        margin-bottom: 5px;
+    }
+
+    /* Sembunyikan teks "Status Pelaksanaan" di mobile agar bersih */
+    .progress-text span {
+        display: none;
+    }
+
+    .progress-text strong {
+        font-size: 0.75rem;
+        width: 100%;
+        text-align: center; /* Angka persen jadi di tengah */
+    }
+
+    .progress-bar-wrap {
+        height: 4px; /* Bar lebih tipis */
+        margin-bottom: 8px;
+    }
+
+    /* Penyesuaian Hero Banner agar tetap proporsional */
+    .eco-hero-container {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    .eco-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Khusus layar sangat kecil (HP Jadul/Kecil) */
+@media (max-width: 480px) {
+    .eco-progress-grid {
+        gap: 5px;
+    }
+    
+    .card-info-min h3 {
+        font-size: 0.7rem;
+    }
+}

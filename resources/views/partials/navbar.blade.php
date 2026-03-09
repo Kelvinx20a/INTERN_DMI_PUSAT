@@ -19,7 +19,7 @@
             <a href="/Program Kerja/Akustik Masjid">Akustik Masjid</a>
             <a href="/Program Kerja/Pengembangan Ekonomi dan Sosial">Pengembangan Ekonomi dan Sosial</a>
             <a href="/Program Kerja/Pelatihan Fungsi Ke-Masjidan">Pelatihan Fungsi Ke-Masjidan</a>
-            <a href="#">Lingkungan Hijau</a>
+            <a href="/Program Kerja/Lingkungan Hijau">Lingkungan Hijau</a>
             <a href="#">Masjid Ramah Jamaah</a>
             <a href="#">Masjid Bersih dan Sehat</a>
             <a href="#">Sertifikat Tanah Wakaf</a>

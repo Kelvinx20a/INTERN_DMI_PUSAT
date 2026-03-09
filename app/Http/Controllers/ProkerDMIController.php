@@ -15,4 +15,8 @@ class ProkerDMIController extends Controller
     public function index3(){
         return view ('layouts/proker/kemasjidan');
     }
+
+    public function index4(){
+        return view ('layouts/proker/lingkungan');
+    }
 }

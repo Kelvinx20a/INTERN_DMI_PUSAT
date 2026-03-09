@@ -1,4 +1,4 @@
-<!-- Navbar -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- panggil file master, dan panggil navbar -->
   @extends('layouts.app')
@@ -157,39 +157,62 @@
 </section>
 
 <!-- Contact Us Section -->
- <section class="contact-section">
-    <div class="contact-container">
-        <h2 class="contact-title">HUBUNGI KAMI</h2>
-        
-        <div class="contact-content">
-            <div class="contact-map">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.452667866384!2d106.85542717585094!3d-6.203859993784149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4689031d9a5%3A0x6d9531505d9e5f5!2sJl.%20Matraman%20Raya%20No.39-41%2C%20RT.1%2FRW.5%2C%20Palmeriam%2C%20Kec.%20Matraman%2C%20Kota%20Jakarta%20Timur%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2013150!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+    <section class="contact-premium-v4">
+    <div class="container-wide">
+        <div class="header-content js-reveal">
+            <span class="accent-tag">Hubungi Kami</span>
+            <h2 class="title-modern">Layanan Komunikasi <span class="text-dmi">Pusat DMI</span></h2>
+        </div>
+
+        <div class="bento-layout">
+            <div class="bento-item map-wrapper js-reveal" id="mapBox">
+                <div class="map-placeholder" id="mapPlaceholder">
+                    <div class="map-overlay-content">
+                        <div class="pulse-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <p>Klik untuk memuat peta interaktif</p>
+                        <button class="btn-load-map">Aktifkan Peta</button>
+                    </div>
+                </div>
+                <div id="mapIframeContainer" class="map-iframe-hidden"></div>
             </div>
 
-            <div class="contact-cards">
-                <div class="info-card">
-                    <i class="fas fa-phone icon"></i>
-                    <h3>Phone</h3>
-                    <p>+62 811 1057 102</p>
+            <div class="info-grid">
+                <a href="https://wa.me/628111057102" class="premium-card js-reveal">
+                    <div class="card-glass-effect"></div>
+                    <div class="card-icon-wrap">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="card-details">
+                        <span class="card-label">Hotline 24/7</span>
+                        <h3>+62 811 1057 102</h3>
+                    </div>
+                    <div class="card-action-icon"><i class="fas fa-arrow-right"></i></div>
+                </a>
+
+                <div class="grid-sub-row">
+                    <a href="mailto:hello@dmi.tv" class="premium-card js-reveal">
+                        <div class="card-icon-wrap sm"><i class="far fa-envelope"></i></div>
+                        <div class="card-details">
+                            <span class="card-label">Email</span>
+                            <h4>hello@dmi.tv</h4>
+                        </div>
+                    </a>
+                    <a href="#" class="premium-card js-reveal">
+                        <div class="card-icon-wrap sm"><i class="fab fa-instagram"></i></div>
+                        <div class="card-details">
+                            <span class="card-label">Instagram</span>
+                            <h4>@DMI.Pusat</h4>
+                        </div>
+                    </a>
                 </div>
-                <div class="info-card">
-                    <i class="fas fa-envelope icon"></i>
-                    <h3>Email</h3>
-                    <p>hello@dmi.tv</p>
-                </div>
-                <div class="info-card">
-                    <i class="fab fa-instagram icon"></i>
-                    <h3>Instagram</h3>
-                    <p>DMI.Pusat</p>
-                </div>
-                <div class="info-card">
-                    <i class="fab fa-tiktok icon"></i>
-                    <h3>TikTok</h3>
-                    <p>@dmitvofficial</p>
-                </div>
+
+                <a href="#" class="premium-card js-reveal">
+                    <div class="card-icon-wrap sm"><i class="fab fa-tiktok"></i></div>
+                    <div class="card-details">
+                        <span class="card-label">TikTok Official</span>
+                        <h4>@dmitvofficial</h4>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
