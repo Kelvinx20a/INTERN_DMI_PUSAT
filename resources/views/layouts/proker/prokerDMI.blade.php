@@ -14,7 +14,7 @@
 <section class="dmi-work-section">
     <div class="container">
         
-        <div class="program-wrapper">
+        <div class="program-wrapper js-reveal">
             <h2 class="dmi-title-center">Program Unggul DMI</h2>
             <div class="divider-title">-</div>
             
@@ -68,7 +68,7 @@
 </section>
 </center>
 
-<section class="dmi-proses-section py-5">
+<section class="dmi-proses-section py-5 js-reveal">
     <div class="container">
         <h2 class="dmi-title-center fw-bold mb-5">Proses Penyusunan Program Kerja</h2>
         

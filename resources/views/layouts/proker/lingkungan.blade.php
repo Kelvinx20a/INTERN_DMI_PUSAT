@@ -1,96 +1,61 @@
- 
  @extends('layouts.app')
     @section('content')
 
-    <section class="dmi-eco-clean">
-    <div class="container-custom">
-        <div class="eco-header-minimal reveal">
-            <span class="eco-tag">ENVIRONMENTAL INITIATIVE</span>
-            <h2 class="eco-title">Program Kerja Masjid Hijau</h2>
-            <div class="eco-divider"></div>
+    <section class="eco-simple-v5">
+    <div class="container-lite">
+        <div class="eco-head js-reveal">
+            <span class="tag-hijau">ENVIRONMENTAL</span>
+            <h2 class="title-main">Program Masjid Hijau</h2>
+            <div class="line-short"></div>
         </div>
 
-        <div class="eco-hero-container reveal">
-            <img src="../img/proker/lingkungan/3.jpg" alt="Hero Vision" class="hero-img">
-            <div class="hero-label">Visi Berkelanjutan 2026</div>
+        <div class="eco-hero js-reveal">
+            <img src="../img/proker/lingkungan/2.jpg" 
+                alt="Visi" 
+                loading="lazy" 
+                decoding="async"
+                width="1200" 
+                height="350">
+            <div class="floating-badge">Visi 2026</div>
         </div>
 
-        <div class="eco-progress-grid">
-            
-            <div class="eco-card-min reveal">
-                <div class="card-img-box">
-                    <img src="https://picsum.photos/id/1016/800/600" alt="Energy">
+        <div class="eco-grid-v5">
+            <div class="eco-card js-reveal">
+                <div class="eco-img">
+                    <img src="https://picsum.photos/id/1016/400/300" alt="Energi" loading="lazy">
                 </div>
-                <div class="card-info-min">
-                    <span class="card-category">Energi</span>
-                    <h3>Pembangkit Listrik Surya</h3>
-                    <div class="progress-section">
-                        <div class="progress-bar-wrap">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Status Pelaksanaan</span>
-                            <strong>85%</strong>
-                        </div>
-                    </div>
+                <div class="eco-info">
+                    <span class="label">Energi</span>
+                    <h3>Pembangkit Surya</h3>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+                    <div class="bar-val"><span>Status</span> <strong>85%</strong></div>
                 </div>
             </div>
 
-            <div class="eco-card-min reveal">
-                <div class="card-img-box">
-                    <img src="https://picsum.photos/id/1015/800/600" alt="Water">
+            <div class="eco-card js-reveal">
+                <div class="eco-img">
+                    <img src="https://picsum.photos/id/1015/400/300" alt="Air" loading="lazy">
                 </div>
-                <div class="card-info-min">
-                    <span class="card-category">Air</span>
-                    <h3>Konservasi Air Wudhu</h3>
-                    <div class="progress-section">
-                        <div class="progress-bar-wrap">
-                            <div class="progress-fill" style="width: 60%;"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Status Pelaksanaan</span>
-                            <strong>60%</strong>
-                        </div>
-                    </div>
+                <div class="eco-info">
+                    <span class="label">Air</span>
+                    <h3>Konservasi Wudhu</h3>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 60%;"></div></div>
+                    <div class="bar-val"><span>Status</span> <strong>60%</strong></div>
                 </div>
             </div>
 
-            <div class="eco-card-min reveal">
-                <div class="card-img-box">
-                    <img src="https://picsum.photos/id/1043/800/600" alt="Waste">
+            <div class="eco-card js-reveal">
+                <div class="eco-img">
+                    <img src="https://picsum.photos/id/1043/400/300" alt="Limbah" loading="lazy">
                 </div>
-                <div class="card-info-min">
-                    <span class="card-category">Limbah</span>
-                    <h3>Waste-to-Energy</h3>
-                    <div class="progress-section">
-                        <div class="progress-bar-wrap">
-                            <div class="progress-fill" style="width: 35%;"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Status Pelaksanaan</span>
-                            <strong>35%</strong>
-                        </div>
-                    </div>
+                <div class="eco-info">
+                    <span class="label">Limbah</span>
+                    <h3>Pengelolaan Sampah</h3>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 35%;"></div></div>
+                    <div class="bar-val"><span>Status</span> <strong>35%</strong></div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
-<script>
-    // Script ini memastikan class "active" muncul saat di-scroll
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        revealElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add('active');
-            }
-        });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Jalankan saat pertama load
-</script>
-
     @endsection

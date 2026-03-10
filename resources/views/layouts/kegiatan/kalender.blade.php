@@ -11,11 +11,11 @@
     
     <header class="cal-header">
       <div class="cal-title-wrap">
-        <span class="cal-label">Jadwal Kegiatan</span>
-        <h2 class="cal-main-title">Kalender Event</h2>
+        <span class="cal-label js-reveal">Jadwal Kegiatan</span>
+        <h2 class="cal-main-title js-reveal">Kalender Event</h2>
       </div>
       
-      <div class="cal-controls">
+      <div class="cal-controls js-reveal">
         
         <div class="cal-month-selector">
           <button class="cal-nav-btn" id="prevMonth">
@@ -32,7 +32,7 @@
       </div>
     </header>
 
-    <div class="cal-layout-grid">
+    <div class="cal-layout-grid js-reveal">
       <div class="cal-main-card">
         <div class="cal-days-header">
           <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span>
@@ -74,7 +74,7 @@
           </div>
       </div>
 
-        <aside class="cal-event-sidebar">
+        <aside class="cal-event-sidebar js-reveal">
             <div class="sidebar-sticky">
                 <h3 class="sidebar-title">Kegiatan Terpilih</h3>
                 <div class="selected-event-card" id="event-display-card">

@@ -6,15 +6,15 @@
     <section class="redaksi-section">
     <div class="container">
         <div class="main-header">
-            <h1 class="main-title">SUSUNAN REDAKSI</h1>
-            <h2 class="sub-title">Pimpinan Pusat Dewan Masjid Indonesia (PP DMI)</h2>
-            <div class="period-badge">
+            <h1 class="main-title js-reveal">SUSUNAN REDAKSI</h1>
+            <h2 class="sub-title js-reveal">Pimpinan Pusat Dewan Masjid Indonesia (PP DMI)</h2>
+            <div class="period-badge js-reveal">
                 <span>MASA KHIDMAT 2024 - 2029</span>
             </div>
-            <div class="header-line"></div>
+            <div class="header-line js-reveal"></div>
         </div>
 
-        <div class="executive-wrapper">
+        <div class="executive-wrapper js-reveal">
             <div class="card-exec">
                 <div class="image-circle">
                     <i class="fas fa-user"></i>
@@ -36,11 +36,11 @@
             </div>
         </div>
 
-        <div class="section-label">
+        <div class="section-label js-reveal">
             <span>Dewan Redaksi</span>
         </div>
 
-        <div class="members-flex-container">
+        <div class="members-flex-container js-reveal">
             @php
                 $editorial = [
                     'KH. Masdar F. Mas\'udi', 'Imam Addaruquthni', 'Sofyan Djalil', 
@@ -64,7 +64,7 @@
         <br>
         <br>
         <br>
-        <div class="section-label">
+        <div class="section-label js-reveal">
             <span>Redaktur</span>
         </div>
 
@@ -91,11 +91,11 @@
         <br>
         <br>
         <br>
-        <div class="section-label">
+        <div class="section-label js-reveal">
             <span>Reporter</span>
         </div>
 
-        <div class="members-flex-container">
+        <div class="members-flex-container js-reveal">
             @php
                 $editorial = [
                     'Faisal Syafrudin Sallatalohy', 'Muhammad Iqbal', 'Buchorie',
@@ -118,7 +118,7 @@
         <br>
         <br>
         <br>
-        <div class="section-label">
+        <div class="section-label js-reveal">
             <span>Fotografer/Videografer</span>
         </div>
 
@@ -168,7 +168,7 @@
     </div>
 </section>
 
-<section class="team-section">
+<section class="team-section js-reveal">
     <div class="team-container">
         <div class="team-column">
             <h2 class="role-title">Editor</h2>

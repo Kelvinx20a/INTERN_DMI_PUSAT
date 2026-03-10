@@ -1,11 +1,13 @@
 <nav class="navbar">
     <div class="navbar-container">
+      <a class="nav-logo" href="">
       <div class="logo-section">
         <div class="logo-placeholder">
           <img src="../img/home/logo-dmi.png" alt="Logo DMI">
         </div>
         <h1 class="brand-name">DEWAN MASJID INDONESIA</h1>
       </div>
+      </a>
 
       <ul class="nav-menu" id="navMenu">
         <li><a href="/">Beranda</a></li>

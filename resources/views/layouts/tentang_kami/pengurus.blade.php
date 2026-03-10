@@ -18,7 +18,7 @@
 <!-- ================================================================================ -->
 <section class="pengurus-container">
     <div class="container-custom">
-        <div class="page-header">
+        <div class="page-header js-reveal">
             <h1 class="main-title">SUSUNAN PENGURUS & PERSONALIA</h1>
             <h2 class="org-name">Pimpinan Pusat Dewan Masjid Indonesia (PP DMI)</h2>
             <div class="meta-info">
@@ -31,7 +31,7 @@
 <!-- TABLE MAJELIS MUTASYAR -->
 <!-- ================================================================================ -->
 
-        <div class="table-card">
+        <div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-landmark"></i>
                 <h3>Majelis Mustasyar</h3>
@@ -70,7 +70,7 @@
 <!-- TABEL MAJELIS PAKAR -->
 <!-- ================================================================================ -->
 
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-user-graduate"></i>
                 <h3>Majelis Pakar</h3>
@@ -114,7 +114,7 @@
 <!-- TABEL PIMPINAN HARIAN -->
 <!-- ================================================================================ -->
 
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-users-cog"></i>
                 <h3>Pimpinan Harian</h3>
@@ -163,7 +163,7 @@
 <!-- ================================================================================ -->
 <!-- TABEL SEKRETARIS JENDERAL -->
 <!-- ================================================================================ -->
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-file-signature"></i>
                 <h3>Sekretaris Jenderal</h3>
@@ -201,7 +201,7 @@
 <!-- TABEL BENDAHARA UMUM -->
 <!-- ================================================================================ -->
 
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-wallet"></i>
                 <h3>Bendahara Umum</h3>
@@ -231,7 +231,7 @@
 <!-- TABEL DIREKTUR PROGRAM -->
 <!-- ================================================================================ -->
 
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-tasks"></i>
                 <h3>Direktur Program</h3>
@@ -256,7 +256,7 @@
 <!-- TABEL ANGGOTA PLENO PH -->
 <!-- ================================================================================ -->
 
-        <div class="table-card highlight-card">
+        <div class="table-card highlight-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-users"></i>
                 <h3>Anggota Pleno PH</h3>
@@ -284,7 +284,7 @@
 <!-- SUSUNAN DEPARTEMEN DAN PERSONALIA PIMPINAN PUSAT DEWAN MASJID INDONESUA (PP DMI) -->
 <!-- ================================================================================ -->
 
-        <div class="page-header mt-5">
+        <div class="page-header mt-5 js-reveal">
             <h2 class="main-title" style="font-size: 1.5rem;">SUSUNAN DEPARTEMEN DAN PERSONALIA 
                                                     PIMPINAN PUSAT DEWAN MASJID INDONESIA (PP DMI)</h2>
             <div class="meta-info">
@@ -296,7 +296,7 @@
 <!-- ================================================================================ -->
 <!-- TABEL BIDANG ORGANISASI DAN PENGEMBANGAN WILAYAH -->
 <!-- ================================================================================ -->
-        <div class="table-card">
+        <div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-sitemap"></i>
                 <h3>Bidang Organisasi dan Pengembangan Wilayah</h3>
@@ -340,7 +340,7 @@
 <!-- ================================================================================ -->
 <!-- TABEL BIDANG ZAKAT DAN WAKAF -->
 <!-- ================================================================================ -->
-        <div class="table-card">
+        <div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-hand-holding-heart"></i>
                 <h3>Bidang Zakat dan Wakaf</h3>
@@ -385,7 +385,7 @@
 <!-- ================================================================================ -->
 <!-- TABEL BIDANG KESEHATAN DAN LINGKUNGAN HIDUP -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-heartbeat"></i>
                 <h3>Bidang Kesehatan dan Lingkungan Hidup</h3>
@@ -424,7 +424,7 @@
 <!-- ================================================================================ -->
 <!-- TABEL BIDANG PEMBERDAYAAN EKONOMI DAN AKUSTIK MASJID -->
 <!-- ================================================================================ -->
- <div class="table-card">
+ <div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-microphone-alt"></i>
                 <h3>BIDANG PEMBERDAYAAN EKONOMI DAN AKUSTIK MASJID</h3>
@@ -469,7 +469,7 @@
 <!-- ================================================================================ -->
 <!-- SUSUNAN PENGURUS PIMPINAN PUSAT DEWAN MASJID INDONESIA (PP DMI)) -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-laptop-code"></i>
                 <h3>BIDANG IPTEK DAN KOMINFO</h3>
@@ -511,7 +511,7 @@
 <!-- ================================================================================ -->
 <!-- BIDANG DAKWAH, SENI BUDAYA DAN SYIAR ISLAM) -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-quran"></i>
                 <h3>BIDANG DAKWAH, SENI BUDAYA DAN SYIAR ISLAM</h3>
@@ -557,7 +557,7 @@
 <!-- ================================================================================ -->
 <!-- BIDANG PEMBINAAN MASJID BERSIH DAN ASRI -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-broom"></i>
                 <h3>BIDANG PEMBINAAN MASJID BERSIH DAN ASRI</h3>
@@ -602,7 +602,7 @@
 <!-- ================================================================================ -->
 <!-- BIDANG PEMBINAAN DAN PENGEMBANGAN WISATA RELIJI -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-map-marked-alt"></i>
                 <h3>BIDANG PEMBINAAN DAN PENGEMBANGAN WISATA RELIJI</h3>
@@ -654,7 +654,7 @@
 <!-- BIDANG PEMBERDAYAAN POTENSI MUSLIMAH, ANAK, DAN KELUARGA -->
 <!-- ================================================================================ -->
 
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-child"></i>
                 <h3>BIDANG PEMBERDAYAAN POTENSI MUSLIMAH, ANAK, DAN KELUARGA</h3>
@@ -697,7 +697,7 @@
 <!-- BIDANG PENDIDIKAN DAN KADERISASI -->
 <!-- ================================================================================ -->
 
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-book-reader"></i>
                 <h3>BIDANG PENDIDIKAN DAN KADERISASI</h3>
@@ -744,7 +744,7 @@
 <!-- BIDANG HUBUNGAN DAN KERJASAMA ANTAR LEMBAGA -->
 <!-- ================================================================================ -->
 
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-handshake"></i>
                 <h3>BIDANG HUBUNGAN DAN KERJASAMA ANTAR LEMBAGA</h3>
@@ -791,7 +791,7 @@
 <!-- ================================================================================ -->
 <!-- BIDANG KEMANUSIAAN DAN PENANGGULANGAN BENCANA -->
 <!-- ================================================================================ -->
-<div class="table-card">
+<div class="table-card js-reveal">
             <div class="table-card-header">
                 <i class="fas fa-hands-helping"></i>
                 <h3>BIDANG KEMANUSIAAN DAN PENANGGULANGAN BENCANA</h3>

@@ -7,16 +7,16 @@
     <div class="dmi-overlay-green">
         <div class="container">
             <div class="dmi-hero-content">
-                <p class="dmi-pre-title">TENTANG DEWAN MASJID INDONESIA (DMI)</p>
-                <h1 class="dmi-main-title">TENTANG DEWAN<br>MASJID INDONESIA</h1>
-                <p class="dmi-tagline"><i>Menyatukan Masjid, Menguatkan Umat</i></p>
+                <p class="dmi-pre-title js-reveal">TENTANG DEWAN MASJID INDONESIA (DMI)</p>
+                <h1 class="dmi-main-title js-reveal">TENTANG DEWAN<br>MASJID INDONESIA</h1>
+                <p class="dmi-tagline js-reveal"><i>Menyatukan Masjid, Menguatkan Umat</i></p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="dmi-profile-body">
-    <div class="container text-center">
+    <div class="container text-center js-reveal">
         <div class="dmi-description-box">
             <h2 class="dmi-section-heading">Profil Dewan Masjid Indonesia</h2>
             <div class="dmi-line-center"></div>
@@ -28,13 +28,13 @@
 </section>
 
 <section class="dmi-container">
-    <header class="main-header">
+    <header class="main-header js-reveal">
         <h1>Jejak Langkah <span>Dewan Masjid Indonesia</span></h1>
         <div class="underline"></div>
     </header>
 
     <div class="grid-layout">
-        <div class="card card-yellow">
+        <div class="card card-yellow js-reveal">
             <div class="card-content">
                 <div class="card-header">
                     <i class="fas fa-lightbulb"></i>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="card card-green">
+        <div class="card card-green js-reveal">
             <div class="card-content">
                 <div class="card-header">
                     <i class="fas fa-mosque"></i>
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="card card-green-dark">
+        <div class="card card-green-dark js-reveal">
             <div class="card-content">
                 <div class="card-header">
                     <i class="fas fa-users"></i>
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="card card-orange">
+        <div class="card card-orange js-reveal">
             <div class="card-content">
                 <div class="card-header">
                     <i class="fas fa-map-marker-alt"></i>
@@ -79,7 +79,7 @@
 <section class="dmi-impact-section">
     <div class="dmi-container">
         <div class="impact-wrapper">
-            <div class="impact-content">
+            <div class="impact-content js-reveal">
                 <span class="sub-badge">Visi Masa Depan</span>
                 <h2 class="impact-title">DMI Sebagai <span>Penggerak Perubahan</span></h2>
                 <p class="impact-desc">
@@ -88,21 +88,21 @@
             </div>
 
             <div class="impact-features">
-                <div class="feature-item">
+                <div class="feature-item js-reveal">
                     <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
                     <div>
                         <h3>Aspek Sosial</h3>
                         <p>Berperan aktif dalam pemberdayaan dan bantuan sosial umat.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item js-reveal">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <div>
                         <h3>Ekonomi & Pendidikan</h3>
                         <p>Mengembangkan potensi ekonomi dan kualitas pendidikan melalui masjid.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item js-reveal">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <div>
                         <h3>Persatuan Umat</h3>

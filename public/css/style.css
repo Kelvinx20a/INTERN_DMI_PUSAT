@@ -42,6 +42,9 @@ html, body {
     align-items: center;
     padding: 0 20px;
 }
+.nav-logo{
+    text-decoration: none;
+}
 
 /* --- Logo Section --- */
 .logo-section {
@@ -76,7 +79,11 @@ html, body {
     font-size: 1rem;
     font-weight: 700;
 }
-
+.brand-name:hover{
+    color: #ffff02;
+    transition: 0.5s ease-in-out;
+    transform: translateY(-2px);
+}
 /* ==========================================================================
    3. NAVIGATION MENU (DESKTOP)
    ========================================================================== */
@@ -451,19 +458,47 @@ body {
     overflow: hidden; /* Tambahkan ini */
 }
 
+/* State dasar semua slide */
 .slide {
     position: absolute;
     inset: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.6s ease-in-out;
+    transform: scale(1.08); /* Sedikit diperbesar saat tidak aktif */
+    transition: 
+        opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+        transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
 
+/* State saat slide aktif */
 .slide.active {
     opacity: 1;
     visibility: visible;
+    transform: scale(1); /* Kembali ke ukuran normal saat muncul */
     z-index: 2;
+}
+
+/* Animasi untuk teks di dalam slide agar tidak muncul barengan */
+.slide.active .slide-info h2 {
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+    opacity: 0;
+}
+
+.slide.active .slide-info p {
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .slide img {
@@ -509,10 +544,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
 }
 
-.nav-arrow:hover { background: #fff; color: var(--dmi-green); }
+.nav-arrow:hover { background: #fff; color: var(--dmi-green); transform: translateY(-50%) scale(1.1);
+    background: #fff; }
 .prev { left: 20px; }
 .next { right: 20px; }
 
@@ -688,7 +725,7 @@ body {
 /* Contact Section */
 :root {
     --dmi-green: #1b4332;
-    --dmi-green-light: #2d6a4f;
+    --dmi-green-terang: #2d6a4f;
     --dmi-accent: #f1c40f;
     --soft-bg: #f8fafc;
     --white: #ffffff;
@@ -831,8 +868,44 @@ body {
 .card-details-row { display: flex; align-items: center; gap: 15px; }
 
 /* Animation Classes */
-.js-reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
-.reveal-active { opacity: 1; transform: translateY(0); }
+
+/* Efek dasar untuk semua elemen yang akan di-reveal */
+.js-reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95); /* Muncul dari bawah + sedikit mengecil */
+    filter: blur(10px); /* Tambahkan sedikit blur agar lebih artistik */
+    transition: 
+        opacity 1.4s cubic-bezier(0.2, 1, 0.3, 1),
+        transform 1.4s cubic-bezier(0.2, 1, 0.3, 1),
+        filter 1.2s ease;
+    visibility: hidden;
+    will-change: transform, opacity; /* Optimasi performa browser */
+}
+
+/* State saat elemen sudah masuk viewport */
+.js-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    visibility: visible;
+}
+/* Khusus untuk Carousel Wrapper agar terlihat lebih solid */
+.carousel-wrapper.js-reveal {
+    transition-delay: 0.1s; /* Berikan sedikit jeda */
+    box-shadow: 0 5px 15px rgba(0,0,0,0); /* Shadow mulai dari nol */
+}
+
+.carousel-wrapper.js-reveal.reveal-active {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2); /* Shadow mengembang halus saat muncul */
+    transition: box-shadow 2s ease;
+}
+.news-right.js-reveal {
+    transition-delay: 0.3s;
+}
+/* Efek khusus untuk elemen bento/grid agar muncul berurutan (stagger) */
+.info-grid .js-reveal:nth-child(1) { transition-delay: 0.1s; }
+.info-grid .js-reveal:nth-child(2) { transition-delay: 0.2s; }
+.info-grid .js-reveal:nth-child(3) { transition-delay: 0.3s; }
 
 /* --- RESPONSIVE MOBILE --- */
 /* --- RESPONSIVE 2-COLUMN GRID (MOBILE) --- */
@@ -1001,3 +1074,30 @@ body {
     opacity: 0.7;
 }
 
+/* --- RESPONSIVE FOOTER (768px & Mobile) --- */
+@media (max-width: 768px) {
+    .footer-container h2 {
+        font-size: 0.9rem;
+    }
+    .footer-top{
+        margin-bottom: 10px;
+    }
+    .footer-logo {
+        width: 66px; /* Sesuaikan ukuran logo */
+        height: auto;
+        margin-bottom: 5px;
+    }
+    .footer-divider{
+        margin-bottom: 10px;
+    }
+    .footer-info-item p {
+    font-size: 0.75rem;
+    line-height: 2.0;
+    margin: 0;
+    opacity: 0.9;
+    }
+    .footer-bottom{
+        gap: 15px;
+        text-align: left;
+    }
+}

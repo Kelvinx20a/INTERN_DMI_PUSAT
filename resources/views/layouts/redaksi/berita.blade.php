@@ -15,7 +15,7 @@
             <div class="swiper-slide">
                 <div class="editorial-card">
                     <div class="image-wrapper">
-                        <img src="../img/berita/carousel/car-1.jpg" alt="Headline">
+                        <img src="../img/berita/carousel/car-1.jpg" alt="Headline" loading="lazy">
                         <div class="overlay-gradient"></div>
                     </div>
                     
@@ -45,7 +45,7 @@
             <div class="swiper-slide">
                 <div class="editorial-card">
                     <div class="image-wrapper">
-                        <img src="../img/berita/carousel/car-2.jpg" alt="News 2">
+                        <img src="../img/berita/carousel/car-2.jpg" alt="News 2" loading="lazy">
                         <div class="overlay-gradient"></div>
                     </div>
                     
@@ -120,15 +120,15 @@
         
         <div class="warta-header-wrapper">
             <div class="header-content-left">
-                <div class="badge-accent">Portal Informasi</div>
-                <h2 class="section-main-title">Warta Masjid <span class="text-gradient">& Keumatan</span></h2>
+                <div class="badge-accent js-reveal">Portal Informasi</div>
+                <h2 class="section-main-title js-reveal">Warta Masjid <span class="text-gradient">& Keumatan</span></h2>
                 <div class="title-decoration">
                     <span class="line-long"></span>
                     <span class="line-dot"></span>
                 </div>
             </div>
             
-            <div class="search-cta-box">
+            <div class="search-cta-box js-reveal">
                 <div class="search-input-group">
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" placeholder="Cari topik dakwah atau berita..." class="search-input-field">
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="news-modern-grid-v3">
+        <div class="news-modern-grid-v3 js-reveal">
             @php
                 $articles = [
                     ['tag' => 'Manajemen', 'date' => '03 Mar 2026', 'title' => 'Standarisasi Akustik Masjid untuk Kenyamanan Ibadah Jemaah', 'desc' => 'Optimalisasi tata suara ruang utama masjid guna mendukung kekhusyukan ibadah.', 'img_id' => '10'],
@@ -153,7 +153,7 @@
             @endphp
 
             @foreach($articles as $item)
-            <article class="news-card-v3">
+            <article class="news-card-v3 js-reveal">
                 <div class="card-image-box">
                     <img src="https://picsum.photos/id/{{ $item['img_id'] }}/600/400" alt="News Image">
                     <span class="badge-tag">{{ $item['tag'] }}</span>
@@ -170,7 +170,7 @@
             @endforeach
         </div>
 
-        <div class="pagination-modern-wrapper">
+        <div class="pagination-modern-wrapper js-reveal">
             <div class="pagination-items">
                 <a href="#" class="pag-btn prev"><i class="fas fa-chevron-left"></i></a>
                 

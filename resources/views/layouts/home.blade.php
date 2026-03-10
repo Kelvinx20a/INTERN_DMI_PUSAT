@@ -30,7 +30,7 @@
   <!-- Carousel -->
 <section id="carousel" class="news-section">
     <div class="news-container">
-        <div class="news-left">
+        <div class="news-left js-reveal">
             <div class="carousel-wrapper">
                 <div class="carousel-main">
                     <div class="carousel-slides">
@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <div class="news-right">
+        <div class="news-right js-reveal">
             <h3 class="sidebar-title">AGENDA POPULER</h3>
             <div class="popular-list">
 
@@ -145,7 +145,7 @@
 
 <!-- Preview Embed Video YT -->
 <section class="video-preview-section">
-    <div class="video-card">
+    <div class="video-card js-reveal">
         <div class="video-box">
             <iframe 
                 src="https://www.youtube.com/embed/eRo5KTO8_dM?rel=0" 

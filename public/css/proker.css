@@ -1014,229 +1014,234 @@
 }
 
 /* --- REVEAL SYSTEM (Penyebab error sebelumnya) --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+/* Gunakan Font System agar tidak download Google Fonts (Sangat Hemat Load) */
+.dmi-eco-clean {
+    padding: 40px 0;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.reveal.active {
+.container-custom {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* REVEAL SYSTEM: Paling efisien (Hanya Opacity) */
+/* --- SECTION MASJID HIJAU LITE --- */
+.eco-simple-v5 { padding: 80px 0; background: #fff; }
+.container-lite { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* REVEAL GLOBAL SINKRON */
+.js-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.js-reveal.reveal-active {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* Header */
-.eco-header-minimal {
-    text-align: center;
-    margin-bottom: 60px;
-}
+.eco-head { text-align: center; margin-bottom: 40px; }
+.tag-hijau { color: #1b4332; font-size: 0.75rem; font-weight: 800; letter-spacing: 3px; }
+.title-main { font-size: 2.2rem; font-weight: 900; color: #1e293b; margin: 10px 0; }
+.line-short { width: 40px; height: 3px; background: #1b4332; margin: 0 auto; }
 
-.eco-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: #fff;
-    height: 200px;
-    background-color: #215a28;
-}
-.eco-tag span{
-    padding: 20px;
-}
+/* Hero Lite */
 
-.eco-title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin: 15px 0;
-    color: #1a202c;
-}
-
-.eco-divider {
-    width: 60px;
-    height: 4px;
-    background: #215a28;
-    margin: 0 auto;
-}
-
-/* Hero Banner */
-.eco-hero-container {
+.eco-hero {
     width: 100%;
-    height: 400px;
-    border-radius: 20px;
+    /* Gunakan aspect-ratio agar browser sudah tahu ukurannya sebelum gambar muncul */
+    aspect-ratio: 16 / 5; 
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 60px;
-    background: #f0f0f0; /* Fallback warna jika gambar lambat */
-}
-
-.hero-img {
+    margin-bottom: 40px;
+    border: 1px solid #0000001e;
+    box-shadow: 0 10px 30px #0000005a;
+    background: #f8fafc; /* Warna dasar agar tidak kosong saat loading */
+    animation: skeleton-loading 2s infinite;
+    /* Mencegah lag saat scrolling */
+    contain: content; 
+}   
+.eco-hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Mencegah gambar bergetar saat animasi reveal */
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    transition: opacity 0.5s ease;
 }
 
-.hero-label {
+/* Samakan persis dengan sistem eco-card */
+.eco-hero.js-reveal {
+    opacity: 0;
+    /* Gunakan jarak yang sama dengan card agar gerakannya seragam */
+    transform: translateY(30px); 
+    /* Gunakan bezier yang memberikan kesan "snappy" tapi tetap smooth */
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    
+    /* Proteksi Performa */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.eco-hero.js-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-badge {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background: rgb(255, 255, 255);
-    padding: 12px 25px;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    padding: 8px 18px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-size: 0.8rem;
+    /* Gunakan border saja daripada shadow jika masih terasa berat */
+    border: 1px solid rgba(0,0,0,0.1);
+    z-index: 2;
 }
 
 /* Grid & Cards */
-.eco-progress-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
+.eco-grid-v5 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; align-items: stretch; /* Memastikan tinggi card sama semua */
+} 
 
-.eco-card-min {
+.eco-card {
+    position: relative;
+    padding-bottom: 20px;
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.411);
-}
-
-/* Kasih delay agar card muncul bergantian */
-.eco-card-min:nth-child(2) { transition-delay: 0.2s; }
-.eco-card-min:nth-child(3) { transition-delay: 0.4s; }
-
-.card-img-box {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #f0f0f0;
-}
-
-.card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
-}
-
-.card-info-min { padding: 30px; }
-
-.card-category {
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: #215a28;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.card-info-min h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-}
-
-/* Progress Bar */
-.progress-bar-wrap {
-    height: 8px;
-    background: #f1f5f9;
     border-radius: 10px;
-    margin-bottom: 15px;
     overflow: hidden;
+    border: 1px solid #00000020;
+    display: flex;
+    flex-direction: column;
+    /* Pastikan transisi spesifik, jangan pakai 'all' */
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), 
+                box-shadow 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    
+    /* Penting: Agar bayangan tidak terpotong saat naik */
+    z-index: 1;
+    cursor: pointer;
 }
 
-.progress-fill {
+/* State Hover - DIPAKSA NAIK */
+.eco-card:hover {
+    /* Naikkan sejauh 15px */
+    transform: translateY(-15px) !important;
+    
+    /* Bayangan yang lebih dalam untuk kesan melayang */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    
+    /* Naikkan z-index agar bayangan menimpa elemen lain */
+    z-index: 10;
+}
+
+.eco-img { width: 100%;  overflow: hidden; }
+.eco-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+
+/* Info Section: Fokus pada Tipografi */
+.eco-info {
+    padding: 24px 20px;
+    background: linear-gradient(to bottom, #ffffff, #fafcfb);
+}
+
+/* Label Kategori: Gaya Minimalis */
+.label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #1b4332;
+    background: #e8f5e9; /* Background tipis agar teks 'label' lebih menonjol */
+    padding: 4px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Judul Card: Tebal & Modern */
+.eco-info h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 2.8vw, 1.25rem);
+    font-weight: 800;
+    color: #0f172a; /* Slate dark yang elegan */
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+/* Progress Bar: Minimalis & Rounded */
+.bar-bg {
+   height: 4px; /* Sangat tipis agar terlihat rapi */
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.bar-fill {
     height: 100%;
-    background: #215a28;
+    background: linear-gradient(90deg, #11e75f); /* Gradient halus */
+    border-radius: 100px;
 }
 
-.progress-text {
+/* Status Label */
+.bar-val {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    align-items: flex-end;
+    margin-top: 10px;
 }
 
-/* Hover */
-.eco-card-min:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 255, 47, 0.352);
+.bar-val span {
+    font-size: 11px;
+    color: #000000;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.eco-card-min:hover .card-img-box img { transform: scale(1.1); }
+.bar-val strong {
+    font-size: 1.1rem; /* Angka persen dibuat besar sebagai point of interest */
+    color: #1b4332;
+    font-weight: 700;
+    line-height: 1;
+}
 
 /* Responsive */
-/* ====================================================== */
-/* RESPONSIVE MOBILE REFINEMENT                          */
-/* ====================================================== */
-/* ====================================================== */
-/* RESPONSIVE: FORCED 3-COLUMN GRID                       */
-/* ====================================================== */
-
-@media (max-width: 992px) {
-    /* Tetap paksa 3 kolom */
-    .eco-progress-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* Perkecil jarak antar card agar muat */
+/* Media Query khusus untuk layar sangat kecil */
+@media (max-width: 768px) {
+    .eco-head .title-main {
+        font-size: 1.2rem;
+    }
+    
+    .eco-hero {
+        height: 150px; /* Hero lebih pendek di HP agar tidak memenuhi layar */
     }
 
-    .container-custom {
-        padding: 0 10px; /* Tipiskan padding samping kontainer */
+    .label {
+        display: flex;
+        justify-content: center;
+        font-size: 0.5rem; /* Label kategori dikecilkan */
     }
 
-    /* Kecilkan padding dalam card */
-    .card-info-min {
-        padding: 15px 10px;
+    .eco-info h3{
+        font-size: 0.85rem;
+        text-align: center;
     }
-
-    /* Perkecil font agar tidak overflow/patah berantakan */
-    .card-info-min h3 {
-        font-size: 0.85rem; /* Font jauh lebih kecil agar muat satu baris */
-        margin-bottom: 10px;
-        white-space: nowrap; /* Mencegah teks turun ke bawah */
-        overflow: hidden;
-        text-overflow: ellipsis; /* Kasih titik-titik jika teks kepanjangan */
+    
+    .bar-val span {
+        display: none; /* Sembunyikan teks "Status" di HP, sisakan angka saja */
     }
-
-    .card-category {
-        font-size: 0.55rem;
-        margin-bottom: 5px;
-    }
-
-    /* Sembunyikan teks "Status Pelaksanaan" di mobile agar bersih */
-    .progress-text span {
-        display: none;
-    }
-
-    .progress-text strong {
-        font-size: 0.75rem;
+    
+    .bar-val strong {
         width: 100%;
-        text-align: center; /* Angka persen jadi di tengah */
-    }
-
-    .progress-bar-wrap {
-        height: 4px; /* Bar lebih tipis */
-        margin-bottom: 8px;
-    }
-
-    /* Penyesuaian Hero Banner agar tetap proporsional */
-    .eco-hero-container {
-        height: 200px;
-        margin-bottom: 30px;
-    }
-    
-    .eco-title {
-        font-size: 1.5rem;
-    }
-}
-
-/* Khusus layar sangat kecil (HP Jadul/Kecil) */
-@media (max-width: 480px) {
-    .eco-progress-grid {
-        gap: 5px;
-    }
-    
-    .card-info-min h3 {
-        font-size: 0.7rem;
+        text-align: center;
     }
 }

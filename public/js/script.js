@@ -51,82 +51,78 @@ document.addEventListener("DOMContentLoaded", function() {
 //================//
 // CAROUSEL HOME //
 // =============//
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const footerItems = document.querySelectorAll('.footer-item');
 
-function showSlide(index) {
-    if (index >= slides.length) currentSlideIndex = 0;
-    if (index < 0) currentSlideIndex = slides.length - 1;
-
-    slides.forEach(s => s.classList.remove('active'));
-    footerItems.forEach(f => f.classList.remove('active'));
-
-    slides[currentSlideIndex].classList.add('active');
-    footerItems[currentSlideIndex].classList.add('active');
-}
-
-function changeSlide(n) {
-    currentSlideIndex += n;
-    showSlide(currentSlideIndex);
-}
-
-function currentSlide(n) {
-    currentSlideIndex = n;
-    showSlide(currentSlideIndex);
-}
-
-// Auto Play (Ganti setiap 5 detik)
-setInterval(() => {
-    changeSlide(1);
-}, 5000);
-
-// Deklarasi variabel yang benar
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- 1. LOGIKA CAROUSEL ---
     const slides = document.querySelectorAll('.slide');
     const footerItems = document.querySelectorAll('.footer-item');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
     let currentIdx = 0;
     let autoSlideInterval;
 
     function showSlide(n) {
-        // Hapus class active dari semua slide
         slides.forEach(s => s.classList.remove('active'));
+        footerItems.forEach(f => f.classList.remove('active'));
         
-        // Hitung index (handling looping)
         currentIdx = (n + slides.length) % slides.length;
         
-        // Tambahkan class active ke slide tujuan
-        slides[currentIdx].classList.add('active');
-        
+        if(slides[currentIdx]) slides[currentIdx].classList.add('active');
+        if(footerItems[currentIdx]) footerItems[currentIdx].classList.add('active');
         resetTimer();
     }
 
-    // Event Listeners untuk Tombol
-    prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
-    nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
-
-    // Event Listeners untuk Footer Items
-    footerItems.forEach((item, idx) => {
-        item.addEventListener('click', () => showSlide(idx));
-    });
-
-    // Auto Slide
-    function startTimer() {
-        autoSlideInterval = setInterval(() => {
-            showSlide(currentIdx + 1);
-        }, 8000);
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentIdx - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentIdx + 1));
+        footerItems.forEach((item, idx) => {
+            item.addEventListener('click', () => showSlide(idx));
+        });
+        startTimer();
     }
 
+    function startTimer() {
+        autoSlideInterval = setInterval(() => showSlide(currentIdx + 1), 8000);
+    }
     function resetTimer() {
         clearInterval(autoSlideInterval);
         startTimer();
     }
 
-    // Inisialisasi
-    startTimer();
+
+    // --- 2. LOGIKA MAP CONTACT ---
+    const mapPlaceholder = document.getElementById('mapPlaceholder');
+    const mapContainer = document.getElementById('mapIframeContainer');
+    if (mapPlaceholder) {
+        mapPlaceholder.addEventListener('click', function() {
+            const mapUrl = "https://www.google.com/maps/embed?pb=..."; // Ganti dengan URL embed asli
+            mapContainer.innerHTML = `<iframe src="${mapUrl}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+            mapPlaceholder.classList.add('fade-out');
+        });
+    }
+
+
+    // --- 3. LOGIKA GLOBAL REVEAL ON SCROLL ---
+    // Solusi agar tidak nabrak: Gunakan satu observer untuk SEMUA elemen .js-reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Memberikan class aktif
+            entry.target.classList.add('reveal-active');
+            
+            // Opsional: Berhenti memantau setelah muncul agar hemat resource
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { 
+    // threshold 0.2 berarti elemen muncul setelah 20% bagiannya terlihat di layar
+    threshold: 0.2,
+    rootMargin: "0px 0px -80px 0px" // Animasi terpicu 80px sebelum elemen benar-benar mentok bawah
+});
+
+document.querySelectorAll('.js-reveal').forEach(el => revealObserver.observe(el));
+
 });
 
 // =========================

@@ -15,14 +15,14 @@
             <div class="content-main">
                 <div class="master-card">
                     
-                    <div class="master-card__header">
+                    <div class="master-card__header js-reveal">
                         <span class="category-tag">DOKUMEN RESMI</span>
                         <h2 class="section-title-main">Hasil Rapat Kerja Nasional 2025</h2>
                         <div class="title-divider"></div>
                     </div>
 
                     <center>
-                    <div class="preview-area">
+                    <div class="preview-area js-reveal">
                         <div id="pdf-loader" class="pdf-loader">
                             <div class="spinner"></div>
                             <p>Memuat Dokumen...</p>
@@ -36,7 +36,7 @@
                     </div>
                     </center>
                     
-                    <div class="download-info">
+                    <div class="download-info js-reveal">
                         hasil rapat kerja yang dilaksankan pada tanggal 17 dan 18 mei 2025. 
                             <br>
                         klik di bawah untuk mengunduh
