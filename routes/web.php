@@ -14,24 +14,25 @@ use App\Http\Controllers\PenataanOrganisasiController;
 
 Route::get('/',[HomeController::class, 'index']);
 
-Route::get('/Program Kerja/Program Kerja Dewan Masjid Indonesia',[ProkerDMIController::class, 'index']);
-Route::get('/Program Kerja/Pengembangan Ekonomi dan Sosial',[ProkerDMIController::class, 'index2']);
-Route::get('/Program Kerja/Pelatihan Fungsi Ke-Masjidan',[ProkerDMIController::class, 'index3']);
-Route::get('/Program Kerja/Lingkungan Hijau',[ProkerDMIController::class, 'index4']);
+Route::get('/program-kerja/program-kerja-dewan-masjid-indonesia',[ProkerDMIController::class, 'index']);
+Route::get('/program-kerja/pengembangan-ekonomi-dan-sosial',[ProkerDMIController::class, 'index2']);
+Route::get('/program-kerja/pelatihan-fungsi-ke-masjidan',[ProkerDMIController::class, 'index3']);
+Route::get('/program-kerja/lingkungan-hijau',[ProkerDMIController::class, 'index4']);
 
 
-Route::get('/Program Kerja/Hasil Rapat Kerja Nasional 2025',[HasilRapatKerjaController::class, 'index']);
-Route::get('/Program Kerja/Akustik Masjid',[AkustikMasjidController::class, 'index']);
-Route::get('/Program Kerja/Penataan Organisasi',[PenataanOrganisasiController::class, 'index']);
+Route::get('/program-kerja/hasil-rapat-kerja-nasional-2025',[HasilRapatKerjaController::class, 'index']);
+Route::get('/program-kerja/akustik-masjid',[AkustikMasjidController::class, 'index']);
+Route::get('/program-kerja/penataan-organisasi',[PenataanOrganisasiController::class, 'index']);
 
-Route::get('/Tentang Kami/Pengurus',[PengurusController::class, 'index']);
-Route::get('/Tentang Kami/Profil',[PengurusController::class, 'profil']);
-
-
-Route::get('/Kegiatan/Event Bulan Ini',[KegiatanController::class, 'event']);
-Route::get('/Kegiatan/Kalender Event',[KegiatanController::class, 'kalender']);
-Route::get('/Kegiatan/Detail Event',[KegiatanController::class, 'detail']);
+Route::get('/tentang-kami/pengurus',[PengurusController::class, 'index']);
+Route::get('/tentang-kami/profil',[PengurusController::class, 'profil']);
 
 
-Route::get('/Redaksi/Berita',[BeritaController::class, 'berita']); 
-Route::get('/Redaksi/Susunan Redaksi',[RedaksiController::class, 'susunanredaksi']); 
+Route::get('/kegiatan/event-bulan-ini',[KegiatanController::class, 'event']);
+Route::get('/kegiatan/kalender-event',[KegiatanController::class, 'kalender']);
+Route::get('/kegiatan/detail-event',[KegiatanController::class, 'detail']);
+
+
+Route::get('/redaksi/berita',[BeritaController::class, 'berita']); 
+Route::get('/redaksi/berita/detail-berita',[BeritaController::class, 'berita2']); 
+Route::get('/redaksi/susunan-redaksi',[RedaksiController::class, 'susunanredaksi']); 

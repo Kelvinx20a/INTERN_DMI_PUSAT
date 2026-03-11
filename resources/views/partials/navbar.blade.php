@@ -3,7 +3,7 @@
       <a class="nav-logo" href="">
       <div class="logo-section">
         <div class="logo-placeholder">
-          <img src="../img/home/logo-dmi.png" alt="Logo DMI">
+          <img src="{{ asset('img/home/logo-dmi.png') }}" alt="Logo DMI">
         </div>
         <h1 class="brand-name">DEWAN MASJID INDONESIA</h1>
       </div>
@@ -15,13 +15,13 @@
         <li class="dropdown">
           <a href="#">Program Kerja <span class="arrow"></span></a>
           <div class="dropdown-content">
-            <a href="/Program Kerja/Program Kerja Dewan Masjid Indonesia">Program Kerja Dewan Masjid Indonesia</a>
-            <a href="/Program Kerja/Hasil Rapat Kerja Nasional 2025">Hasil Rapat Kerja Nasional 2025</a>
-            <a href="/Program Kerja/Penataan Organisasi">Penataan Organisasi</a>
-            <a href="/Program Kerja/Akustik Masjid">Akustik Masjid</a>
-            <a href="/Program Kerja/Pengembangan Ekonomi dan Sosial">Pengembangan Ekonomi dan Sosial</a>
-            <a href="/Program Kerja/Pelatihan Fungsi Ke-Masjidan">Pelatihan Fungsi Ke-Masjidan</a>
-            <a href="/Program Kerja/Lingkungan Hijau">Lingkungan Hijau</a>
+            <a href="/program-kerja/program-kerja-dewan-masjid-indonesia">Program Kerja Dewan Masjid Indonesia</a>
+            <a href="/program-kerja/hasil-rapat-kerja-nasional-2025">Hasil Rapat Kerja Nasional 2025</a>
+            <a href="/program-kerja/penataan-organisasi">Penataan Organisasi</a>
+            <a href="/program-kerja/akustik-masjid">Akustik Masjid</a>
+            <a href="/program-kerja/pengembangan-ekonomi-dan-sosial">Pengembangan Ekonomi dan Sosial</a>
+            <a href="/program-kerja/pelatihan-fungsi-kemasjidan">Pelatihan Fungsi Ke-Masjidan</a>
+            <a href="/program-kerja/lingkungan-hijau">Lingkungan Hijau</a>
             <a href="#">Masjid Ramah Jamaah</a>
             <a href="#">Masjid Bersih dan Sehat</a>
             <a href="#">Sertifikat Tanah Wakaf</a>
@@ -34,24 +34,24 @@
         <li class="dropdown">
           <a href="#">Tentang Kami <span class="arrow"></span></a>
           <div class="dropdown-content">
-            <a href="/Tentang Kami/Pengurus">Pengurus</a>
-            <a href="/Tentang Kami/Profil">Profil</a>
+            <a href="/tentang-kami/pengurus">Pengurus</a>
+            <a href="/tentang-kami/profil">Profil</a>
           </div>
         </li>
 
         <li class="dropdown">
           <a href="#">Kegiatan <span class="arrow"></span></a>
           <div class="dropdown-content">
-            <a href="/Kegiatan/Event Bulan Ini">Event Bulan Ini</a>
-            <a href="/Kegiatan/Kalender Event">Kalender Event</a>
+            <a href="/kegiatan/event-bulan-ini">Event Bulan Ini</a>
+            <a href="/kegiatan/kalender-event">Kalender Event</a>
           </div>
         </li>
 
         <li class="dropdown">
           <a href="#">Redaksi <span class="arrow"></span></a>
           <div class="dropdown-content">
-            <a href="/Redaksi/Berita">Berita</a>
-            <a href="/Redaksi/Susunan Redaksi">Susunan Redaksi</a>
+            <a href="/redaksi/berita">Berita</a>
+            <a href="/redaksi/susunan-redaksi">Susunan Redaksi</a>
           </div>
         </li>
       </ul>

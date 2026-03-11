@@ -1,3 +1,5 @@
+/* PAGE SUSUNAN REDAKSI */
+
 :root {
     --dmi-green: #215a28;
     --dmi-dark: #1e293b;
@@ -400,4 +402,314 @@
 @media (max-width: 380px) {
     .card-info h3 { font-size: 0.75rem; }
     .card-member-minimal h4 { font-size: 0.65rem; }
+}
+
+/* PAGE DETAIL BERITA */
+
+:root {
+    --dmi-green: #215a28;
+    --dmi-green-light: #f0f7f1;
+    --text-heading: #1e293b;
+    --text-body: #475569;
+    --text-muted: #94a3b8;
+    --border-soft: #f1f5f9;
+    --white: #ffffff;
+    --dmi-green-hover: #1a4720;
+    --slate-900: #0f172a; /* Warna font heading utama */
+    --slate-600: #475569; /* Warna font body */
+    --slate-400: #94a3b8; /* Warna font meta/date */
+    --bg-card: #ffffff;
+    --bg-subtle: #f8fafc;
+    --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset Khusus Detail Berita */
+.news-detail-section {
+    padding: 80px 0;
+    background: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr; /* Perbandingan kolom yang elegan */
+    gap: 80px;
+}
+
+/* Header Berita */
+.news-header { margin-bottom: 40px; }
+.breadcrumb {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem; 
+    font-weight: 800; 
+    color: var(--dmi-green); 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+}
+.news-title { 
+    font-size: clamp(2rem, 5vw, 3rem); 
+    font-weight: 900; 
+    color: var(--text-heading); 
+    line-height: 1.1; 
+    letter-spacing: -2px; 
+    margin-bottom: 25px;
+}
+.news-meta { 
+    font-size: 0.9rem; 
+    color: var(--text-muted); 
+    font-weight: 500;
+    
+}
+
+/* Gambar Utama */
+.news-featured-image { margin-bottom: 50px; }
+.news-featured-image img { 
+    width: 100%; 
+    border-radius: 0; /* Kotak tajam untuk kesan arsitektural */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+.caption { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    text-align: center; 
+    margin-top: 15px; 
+    font-style: italic;
+}
+
+/* Artikel */
+.news-body-text { 
+    font-size: 1.15rem; 
+    line-height: 1.85; 
+    color: var(--text-body); 
+}
+.news-body-text p { margin-bottom: 30px; }
+.news-body-text strong { color: var(--text-heading); font-weight: 800; }
+
+blockquote {
+    margin: 50px 0;
+    padding: 30px;
+    border-left: 3px solid var(--dmi-green);
+    background: var(--dmi-green-light);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dmi-green);
+    line-height: 1.4;
+}
+
+/* Container Tags */
+.news-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-soft);
+}
+
+/* Base Style Tag */
+.news-tags .tag {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #f8fafc; /* Abu-abu sangat muda */
+    color: var(--text-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 50px; /* Pill style */
+    border: 1px solid var(--border-soft);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efek Hover Interaktif */
+.news-tags .tag:hover {
+    color: #ffffff;
+    background-color: var(--dmi-green);
+    border-color: var(--dmi-green);
+    transform: translateY(-3px); /* Melompat sedikit ke atas */
+    box-shadow: 0 10px 20px rgba(33, 90, 40, 0.15);
+}
+
+/* Variasi: Tambahkan simbol '#' di depan teks secara otomatis */
+.news-tags .tag::before {
+    content: '#';
+    margin-right: 4px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.news-tags .tag:hover::before {
+    opacity: 1;
+}
+
+/* Animasi halus saat diklik (Active state) */
+.news-tags .tag:active {
+    transform: translateY(-1px) scale(0.95);
+    box-shadow: 0 5px 10px rgba(33, 90, 40, 0.1);
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.section-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--slate-900);
+    margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid var(--dmi-green);
+}
+
+/* Popular Cards */
+.popular-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pop-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-soft);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.114);
+    border: 1px solid #0000001f;
+}
+
+.pop-card:hover {
+    border: 1px solid #0000001f;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(54, 229, 75, 0.329);
+}
+
+.pop-card-img {
+    flex-shrink: 0;
+    width: 85px;
+    height: 85px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pop-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.pop-card:hover .pop-card-img img {
+    transform: scale(1.1);
+}
+
+.pop-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pop-card-content .category {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--dmi-green);
+    text-transform: uppercase;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.pop-card-content h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--slate-900);
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pop-card-content .date {
+    font-size: 0.75rem;
+    color: var(--slate-400);
+    margin-top: 4px;
+}
+
+/* Action Grid (Layanan Masjid) */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    background: var(--bg-subtle);
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.114);
+    border: 1px solid #0000001f;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.action-item i {
+    font-size: 1.2rem;
+    color: var(--dmi-green);
+}
+
+.action-item span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--slate-900);
+}
+
+.action-item:hover {
+    border-color: var(--dmi-green);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+    .news-grid { grid-template-columns: 1fr; gap: 60px; }
+    .sticky-sidebar { 
+        padding-left: 0; 
+        border-left: none; 
+        border-top: 1px solid var(--border-soft);
+        padding-top: 60px;
+    }
+    .news-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+    .news-detail-section { padding: 40px 0; }
+    .news-title { font-size: 1.8rem; letter-spacing: -1px; }
+    .news-body-text { font-size: 1.05rem; }
 }

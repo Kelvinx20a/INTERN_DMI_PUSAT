@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper('.editorialSwiper', {
         parallax: true,
         watchSlidesProgress: true, // Tambahkan ini
-        speed: 1200,
+        speed: 1500,
         loop: true,
         autoplay: {
             delay: 5000,

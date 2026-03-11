@@ -1,7 +1,7 @@
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-top">
-            <img src="../img/home/logo-dmi.png" alt="Logo DMI" class="footer-logo">
+            <img src="{{ asset('img/home/logo-dmi.png') }}" alt="Logo DMI" class="footer-logo">
             <h2>DEWAN MASJID INDONESIA</h2>
         </div>
 

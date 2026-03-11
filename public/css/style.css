@@ -129,7 +129,7 @@ html, body {
     left: 0;
     width: 100%;
     background-color: #1a431e; /* Hijau gelap */
-    display: none; /* Hidden by default */
+    visibility: hidden;
     opacity: 0;
     padding: 30px 10%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -139,14 +139,18 @@ html, body {
     column-gap: 40px;
     column-rule: 1px solid rgba(255,255,255,0.1);
     z-index: 1000;
+
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none; /* Agar tidak bisa diklik saat transparan */
     
 }
 
 /* --- Active State (Triggered by JS) --- */
 .dropdown.is-active .dropdown-content {
-    display: block;
+    visibility: visible;
     opacity: 1;
-    animation: fadeInSlide 5s ease-out;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .dropdown.is-active .arrow {

@@ -163,7 +163,7 @@
                     <h3 class="title-v3">{{ $item['title'] }}</h3>
                     <p class="excerpt-v3">{{ $item['desc'] }}</p>
                     <div class="footer-v3">
-                        <a href="#" class="btn-read">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        <a href="/redaksi/berita/detail-berita" class="btn-read">Selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </article>
