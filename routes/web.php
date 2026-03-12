@@ -19,6 +19,10 @@ Route::get('/program-kerja/pengembangan-ekonomi-dan-sosial',[ProkerDMIController
 Route::get('/program-kerja/pelatihan-fungsi-ke-masjidan',[ProkerDMIController::class, 'index3']);
 Route::get('/program-kerja/lingkungan-hijau',[ProkerDMIController::class, 'index4']);
 
+Route::get('/program-kerja/sertifikat-tanah-wakaf',[ProkerDMIController::class, 'index5']);
+Route::get('/program-kerja/masjid-ramah-jamaah',[ProkerDMIController::class, 'index6']);
+Route::get('/program-kerja/masjid-bersih-dan-sehat',[ProkerDMIController::class, 'index7']);
+
 
 Route::get('/program-kerja/hasil-rapat-kerja-nasional-2025',[HasilRapatKerjaController::class, 'index']);
 Route::get('/program-kerja/akustik-masjid',[AkustikMasjidController::class, 'index']);

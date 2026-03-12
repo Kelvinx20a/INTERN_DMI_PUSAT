@@ -229,21 +229,40 @@ html, body {
 
     .nav-menu > li > a {
         height: auto;
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 15px 20px; /* Beri ruang klik yang nyaman */
+        border-bottom: 1px solid rgba(255,255,255,0.05);
         width: 100%;
+        display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     .dropdown-content {
         position: static;
         column-count: 1;
-        padding: 10px 20px;
+        padding: 5px 20px;
         background-color: rgba(0,0,0,0.1);
         box-shadow: none;
-        display: none; /* Tetap dikontrol via is-active class */
+        
+        /* FIX UNTUK ANIMASI */
+        display: block;          /* Ubah dari none ke block */
+        max-height: 0;           /* Tertutup */
+        overflow: hidden;        /* Sembunyikan konten yang meluap */
+        opacity: 0;              /* Transparan */
+        visibility: visible;     /* Tetap visible agar transisi jalan */
+        pointer-events: none;
+        transform: translateY(-10px); /* Efek slide sedikit dari atas */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
+    /* Saat Dropdown Aktif */
+    .dropdown.is-active .dropdown-content {
+        max-height: 1000px;      /* Angka besar agar semua menu muncul */
+        opacity: 1;
+        padding: 10px 20px;      /* Beri padding saat terbuka */
+        transform: translateY(0);
+        pointer-events: auto;
+        margin-bottom: 10px;     /* Spasi antar menu */
+    }
     .brand-name { font-size: 0.85rem; }
 }
 

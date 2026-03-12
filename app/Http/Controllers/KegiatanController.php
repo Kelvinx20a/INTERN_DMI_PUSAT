@@ -16,6 +16,6 @@ class KegiatanController extends Controller
     }
     public function detail()
     {
-        return view('layouts/kegiatan/detail');
+        return view('layouts/kegiatan/detail-event');
     }
 }

@@ -22,9 +22,9 @@
             <a href="/program-kerja/pengembangan-ekonomi-dan-sosial">Pengembangan Ekonomi dan Sosial</a>
             <a href="/program-kerja/pelatihan-fungsi-kemasjidan">Pelatihan Fungsi Ke-Masjidan</a>
             <a href="/program-kerja/lingkungan-hijau">Lingkungan Hijau</a>
-            <a href="#">Masjid Ramah Jamaah</a>
-            <a href="#">Masjid Bersih dan Sehat</a>
-            <a href="#">Sertifikat Tanah Wakaf</a>
+            <a href="/program-kerja/masjid-ramah-jamaah">Masjid Ramah Jamaah</a>
+            <a href="/program-kerja/masjid-bersih-dan-sehat">Masjid Bersih dan Sehat</a>
+            <a href="/program-kerja/sertifikat-tanah-wakaf">Sertifikat Tanah Wakaf</a>
             <a href="#">Pendidikan dan Dakwah</a>
             <a href="#">Arsitektur Masjid</a>
             <a href="#">Wisata Religi</a>
