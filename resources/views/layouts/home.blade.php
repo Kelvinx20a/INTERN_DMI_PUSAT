@@ -3,6 +3,7 @@
 <!-- panggil file master, dan panggil navbar -->
   @extends('layouts.app')
     @section('content')
+    
   <!-- Hero Section -->
     <section class="hero-premium">
     <div class="hero-bg-wrapper">
@@ -71,16 +72,7 @@
                             <p>Legalitas | 12 jam yang lalu</p>
                         </div>
                     </div>
-                    <div class="footer-grid">
-                        <div class="footer-item" data-index="0">
-                            <h4>Pelatihan Teknisi Akustik Masjid Regional Sumatera</h4>
-                            <p>Program Kerja | 8 jam yang lalu</p>
-                        </div>
-                        <div class="footer-item" data-index="1">
-                            <h4>Sosialisasi Sertifikasi Tanah Wakaf bersama ATR/BPN</h4>
-                            <p>Legalitas | 12 jam yang lalu</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -98,14 +90,6 @@
                 </div>
 
                   <div class="popular-card">
-                    <span class="rank">1</span>
-                    <div class="popular-content">
-                        <h4>Panduan Standarisasi Manajemen Masjid Modern 2026</h4>
-                        <span class="cat">Manajemen</span>
-                    </div>
-                </div>
-
-                <div class="popular-card">
                     <span class="rank">1</span>
                     <div class="popular-content">
                         <h4>Panduan Standarisasi Manajemen Masjid Modern 2026</h4>

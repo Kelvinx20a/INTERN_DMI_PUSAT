@@ -68,12 +68,15 @@
 </section>
 </center>
 
+<br>
+<br>
+
 <section class="dmi-proses-section py-5 js-reveal">
     <div class="container">
-        <h2 class="dmi-title-center fw-bold mb-5">Proses Penyusunan Program Kerja</h2>
+        <h2 class="dmi-title-center2 fw-bold mb-5">Proses Penyusunan Program Kerja</h2>
         
         <center>
-            <div class="divider-title2"></div>
+            <div class="divider-title"></div>
         </center>
         
         <div class="workflow-wrapper">

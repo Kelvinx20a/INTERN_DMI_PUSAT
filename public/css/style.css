@@ -314,7 +314,7 @@ body {
 ======================================================
 */
 .hero-premium {
-    height: 100vh;
+    height: 115vh;
     min-height: 700px;
     position: relative;
     display: flex;
@@ -335,7 +335,7 @@ body {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.6);
-    animation: zoomSlow 20s infinite alternate ease-in-out;
+    animation: zoomSlow 25s infinite alternate ease-in-out;
 }
 
 /* @keyframes zoomSlow {
@@ -437,9 +437,56 @@ body {
 }
 
 @media (max-width: 768px) {
-    
-    .c-mini-item { flex-direction: column; text-align: center; gap: 10px; }
-}
+
+    /* 1. Mengetengahkan blok konten secara keseluruhan */
+    .container-custom.hero-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Pastikan semua anak elemen tetap rapat kiri */
+        justify-content: center;
+        
+        /* Memberikan batas lebar agar grup konten bisa berada di tengah layar */
+        max-width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+        
+        /* Opsional: Jika ingin teks benar-benar presisi di tengah layar HP */
+        padding-left: 5%; 
+    }
+
+    /* 2. Memastikan Hero Tag tetap konsisten di kiri */
+    .hero-tag {
+        margin-left: 0;
+        margin-right: auto;
+        display: inline-block;
+    }
+
+    /* 3. Title & Subtitle tetap Left-Aligned */
+    .hero-title {
+        text-align: left;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%; /* Agar tidak melebar melebihi container */
+    }
+
+    /* 4. Menyejajarkan tombol di bawah teks */
+    .hero-actions {
+        display: flex;
+        justify-content: flex-start; /* Tetap sejajar kiri dengan teks di atasnya */
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+    .btn-glow{
+        font-size: 0.83rem;
+    }
+}   
 
 
 /* ==========================================================================
@@ -464,11 +511,16 @@ body {
     padding: 0 80px;
 }
 
-.news-left { flex: 7; }
+.news-left { 
+    flex: 0 0 auto; 
+    width: 660px;
+
+}
 
 .carousel-wrapper {
     background: #fff;
     border-radius: 12px;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.63);
 
@@ -554,8 +606,8 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(241, 196, 15, 0.9);
-    color: var(--dmi-green);
+    background: rgba(225, 212, 160, 0.235);
+    color: #ffffff;
     border: none;
     width: 45px;
     height: 45px;
@@ -605,7 +657,10 @@ body {
 .footer-item p { font-size: 0.7rem; opacity: 0.7; }
 
 /* Kolom Kanan */
-.news-right { flex: 3; }
+.news-right { 
+    flex: 3; 
+    min-width: 300px;
+}
 .sidebar-title {
     font-size: 1rem;
     color: var(--dmi-green);
@@ -623,13 +678,21 @@ body {
 @media screen and (max-width: 768px) {
     
     .news-section {
-        padding: 30px 0; /* Mengurangi padding luar agar tidak boros tempat */
+        padding: 60px 0; /* Mengurangi padding luar agar tidak boros tempat */
     }
 
     .news-container {
         flex-direction: column; /* Mengubah flex dari samping ke bawah */
-        gap: 20px;
-        padding: 0 15px;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .news-left {
+        width: 100%;           /* Paksa lebar penuh layar */
+        flex: none;
+    }
+    .carousel-wrapper {
+        width: 100%;           /* Hilangkan lebar statis 660px */
+        border-radius: 8px;    /* Sedikit lebih kecil radiusnya agar proporsional */
     }
 
     /* Menyesuaikan tinggi carousel agar lebih proporsional di HP */
@@ -677,6 +740,12 @@ body {
     /* Footer Carousel: Ubah dari 2 kolom menjadi 1 kolom */
     .carousel-footer {
         padding: 15px 20px;
+    }
+    .news-right {
+        width: 100%;
+        flex: none;
+        padding-top: 20px;
+        border-top: 1px solid #eee; /* Beri pemisah halus antara carousel & agenda */
     }
 
     .footer-grid {
@@ -945,7 +1014,10 @@ body {
     .map-wrapper { height: 400px; order: 2; }
     .info-grid { order: 1; width: 100%; }
     .title-modern{
-        font-size: 2.2rem;
+        font-size: 1.7rem;
+    }
+    .accent-tag{
+        font-size: 0.7rem;
     }
 }
 
