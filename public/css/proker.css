@@ -419,6 +419,7 @@
     background: #eee;
     opacity: 0;
     transform: translateY(40px) scale(0.95); /* Keadaan awal Reveal */
+    box-shadow: 0 10px 25px #000000d7;
 }
 
 .bento-item img {
@@ -466,15 +467,60 @@
     background: #f8fafc;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #eef0f2;
+    border: 1.2px solid #00000049;
     transition: 0.3s;
     opacity: 0;
     transform: translateY(30px);
+
+    /* Tambahan agar kartu selalu sama tinggi dalam satu baris */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .feat-card:hover { background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-.feat-icon { color: #215a28; font-size: 2rem; margin-bottom: 15px; }
+/* 1. Konsistensi Ikon */
+.feat-icon { 
+    color: #215a28; 
+    font-size: 2rem; 
+    margin-bottom: 20px;
+    height: 50px; /* Kunci tinggi area ikon */
+    display: flex;
+    align-items: center;
+}
+/* 2. Konsistensi Judul (Kunci utama agar deskripsi sejajar) */
+.feat-card h3 { 
+    margin-top: 0;
+    margin-bottom: 12px; 
+    font-size: 1.25rem;
+    color: #1e293b;
+    line-height: 1.4;
+    
+    /* Pesan ruang untuk 2 baris judul */
+    min-height: 2.8em; 
+    display: flex;
+    align-items: flex-start;
+}
+/* 3. Konsistensi Deskripsi */
+.feat-card p { 
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #64748b;
+    
+    /* Pesan ruang untuk 3 baris deskripsi agar kartu tidak naik-turun */
+    min-height: 4.8em; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Potong teks jika kelewat panjang */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
+.feat-card:hover { 
+    background: #fff; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05); 
+    border-color: #215a2833;
+}
 /* REVEAL CLASS */
 .reveal-active {
     opacity: 1 !important;
@@ -482,17 +528,126 @@
     transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* RESPONSIVE MOBILE (PENTING) */
-@media (max-width: 992px) {
+/* --- RESPONSIVE MOBILE REFINEMENT --- */
+
+@media (max-width: 768px) {
+    .org-intro h2{
+        font-size: 1.5rem;
+    }
+    /* 1. Pengaturan Bento Grid */
     .org-bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
+        gap: 16px;
+        margin-bottom: 30px;
     }
-    .main-feat, .wide-feat, .tall-feat { 
+
+    /* Foto Utama (Full Width di atas) */
+    .main-feat { 
+        grid-column: span 2; 
+        margin-bottom: 0px;
+        height: 310px; /* Lebih tinggi agar foto tokoh tetap jelas */
+    }
+
+    /* Kartu Muktamar & Inovasi (Sejajar di bawahnya) */
+    .wide-feat, 
+    .tall-feat { 
         grid-column: span 1; 
-        height: 300px; 
+        height: 220px; /* Ukuran lebih compact untuk grid bawah */
     }
-    .org-features-row { grid-template-columns: 1fr; }
+
+    .bento-item{
+        box-shadow: 0 5px 15px #000000;
+
+    }
+    /* Penyesuaian Teks di dalam Bento */
+    .bento-caption {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Teks selalu nempel di bawah */
+        height: 100%; /* Memenuhi container agar flex bekerja */
+        box-sizing: border-box;
+    }
+
+    .bento-caption h4 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+        /* Kunci tinggi: Paksa box judul selalu setinggi 2 baris */
+        min-height: 2.6em; 
+        margin: 8px 0 4px 0;
+        display: flex;
+        align-items: flex-end; /* Jika judul 1 baris, dia nempel di bawah sejajar judul 2 baris */
+    }
+
+    .bento-caption p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        /* Kunci tinggi: Paksa box deskripsi selalu setinggi 2 baris */
+        min-height: 2.8em; 
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .bento-caption .tag {
+        align-self: flex-start; /* Tag tetap di atas teks */
+        font-size: 0.65rem;
+        padding: 3px 10px;
+    }
+
+    /* 2. Pengaturan Feature Cards (2 Kolom) */
+    .org-features-row { 
+        grid-template-columns: repeat(2, 1fr); /* 2 Grid sesuai permintaan */
+        gap: 12px; 
+    }
+
+    /* Card ke-3 (Keamanan Siber) agar rapi, buat dia memenuhi baris bawah jika jumlahnya ganjil */
+    .feat-card:last-child {
+        grid-column: span 2; 
+        text-align: center; /* Opsional: buat rata tengah agar terlihat sebagai penutup */
+    }
+
+    .feat-card {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        text-align: left; /* Konsisten rata kiri */
+    }
+
+    .feat-icon {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        height: 35px; /* Kunci tinggi area ikon */
+    }
+
+    .feat-card h3 {
+        font-size: 0.85rem;
+        min-height: 2.6em; /* Kunci ruang judul */
+        margin-bottom: 6px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .feat-card p {
+        font-size: 0.72rem;
+        line-height: 1.5;
+        min-height: 4.5em; /* Kunci ruang 3 baris teks */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .feat-card:last-child {
+        grid-column: span 2;
+        text-align: left; /* Kembalikan ke kiri agar konsisten dengan atasnya */
+    }
+}
+
+/* Screen sangat kecil (iPhone SE / Fold) */
+@media (max-width: 480px) {
+    .main-feat { height: 280px; }
+    .wide-feat, .tall-feat { height: 180px; }
 }
 
 /* ========================================= */
@@ -513,7 +668,7 @@
     display: inline-block; background: rgba(33, 90, 40, 0.08); color: var(--dmi-green);
     padding: 6px 16px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 20px;
 }
-.editorial-title { font-size: 2.8rem; font-weight: 850; color: #111; line-height: 1.1; margin-bottom: 30px; }
+.editorial-title { font-size: 2.8rem; font-weight: 850; color: #111; line-height: 1.3; margin-bottom: 30px; }
 
 .editorial-meta { 
     display: flex; justify-content: space-between; align-items: center; 
@@ -567,6 +722,44 @@
     .editorial-title { font-size: 1.8rem; }
     .editorial-header { text-align: left; }
     .editorial-meta { flex-direction: column; align-items: flex-start; gap: 15px; }
+}
+
+@media (max-width: 768px) {
+    .category-pill{
+        font-size: 0.65rem;
+    }
+    .editorial-title{
+        font-size: 1.4rem;
+    }
+    .author-text .name { 
+        display: block; 
+        font-weight: 700; 
+        font-size: 0.85rem; 
+        color: #333; 
+    }
+    .author-text .date { 
+        font-size: 0.75rem; 
+        color: #888; 
+    }
+    .editorial-article-body { 
+        font-size: 1.1rem; 
+    }
+    .lead-text { 
+        font-size: 1rem; 
+    }
+    .editorial-quote { 
+       font-size: 1.1rem;
+    }
+    .editorial-main-content h3{
+        font-size: 1.2rem;
+    }
+    .editorial-main-content p{
+        font-size: 1rem;
+    }
+    .custom-list li{
+        font-size: 1rem;
+    }
+
 }
 
 /* ======================================================   */
@@ -750,6 +943,7 @@
 @media (max-width: 768px) {
     .preview-area{
         width: 100%;
+        height: 360px;
     }
     .download-info{
         font-size: 16px;

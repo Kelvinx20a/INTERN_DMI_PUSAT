@@ -10,18 +10,18 @@
         <div class="footer-bottom">
             <div class="footer-info-item">
                 <i class="fas fa-building info-icon"></i>
-                <p>Jl. Matraman Raya No.39-41, RT.3/RW.3, Palmeriam, Kec. Matraman, <br> 
+                <p class="teks-address-footer">Jl. Matraman Raya No.39-41, RT.3/RW.3, Palmeriam, Kec. Matraman, <br> 
                    Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13140</p>
             </div>
 
             <div class="footer-contact-group">
                 <div class="footer-info-item">
                     <i class="fas fa-phone info-icon"></i>
-                    <p>+62 8111 1057 102</p>
+                    <p class="teks-bawah-footer">+62 8111 1057 102</p>
                 </div>
                 <div class="footer-info-item">
                     <i class="fas fa-envelope info-icon"></i>
-                    <p>halo@dmipusat.id</p>
+                    <p class="teks-bawah-footer">halo@dmipusat.id</p>
                 </div>
             </div>
 
