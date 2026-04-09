@@ -22,7 +22,9 @@ Route::get('/program-kerja/lingkungan-hijau',[ProkerDMIController::class, 'index
 Route::get('/program-kerja/sertifikat-tanah-wakaf',[ProkerDMIController::class, 'index5']);
 Route::get('/program-kerja/masjid-ramah-jamaah',[ProkerDMIController::class, 'index6']);
 Route::get('/program-kerja/masjid-bersih-dan-sehat',[ProkerDMIController::class, 'index7']);
-
+Route::get('/program-kerja/pendidikan-dan-dakwah',[ProkerDMIController::class, 'index8']);
+Route::get('/program-kerja/arsitektur-masjid',[ProkerDMIController::class, 'index9']);
+Route::get('/program-kerja/wisata-religi',[ProkerDMIController::class, 'index10']);
 
 Route::get('/program-kerja/hasil-rapat-kerja-nasional-2025',[HasilRapatKerjaController::class, 'index']);
 Route::get('/program-kerja/akustik-masjid',[AkustikMasjidController::class, 'index']);
@@ -38,5 +40,5 @@ Route::get('/kegiatan/detail-event',[KegiatanController::class, 'detail']);
 
 
 Route::get('/redaksi/berita',[BeritaController::class, 'berita']); 
-Route::get('/redaksi/berita/detail-berita',[BeritaController::class, 'berita2']); 
+Route::get('/redaksi/berita/detail-berita',[BeritaController::class, 'berita2']);
 Route::get('/redaksi/susunan-redaksi',[RedaksiController::class, 'susunanredaksi']); 

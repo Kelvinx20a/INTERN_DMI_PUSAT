@@ -91,6 +91,7 @@
         <br>
         <br>
         <br>
+        <center>
         <div class="section-label js-reveal">
             <span>Reporter</span>
         </div>
@@ -111,6 +112,7 @@
             </div>
             @endforeach
         </div>
+        </center>
         
 
 

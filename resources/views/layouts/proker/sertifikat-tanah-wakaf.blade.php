@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="wk-action-group">
+            <!-- <div class="wk-action-group">
                 <a href="#" class="wk-btn-primary">
                     <span>Mulai Konsultasi Sekarang</span>
                     <i class="fas fa-arrow-right"></i>
@@ -35,7 +35,7 @@
                 <span class="wk-trust-info">
                     <i class="fas fa-shield-alt"></i> Didukung oleh Pimpinan Pusat DMI
                 </span>
-            </div>
+            </div> -->
         </div>
 
         <div class="wk-visual-content js-reveal">

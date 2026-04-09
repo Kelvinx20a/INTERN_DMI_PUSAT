@@ -24,7 +24,7 @@ html, body {
    2. NAVBAR STRUCTURE
    ========================================================================== */
 .navbar {
-    background-color: #215a28; /* Hijau DMI */
+    background-color: #336633; /* Hijau DMI */
     height: 80px;
     display: flex;
     align-items: center;
@@ -69,6 +69,9 @@ html, body {
 .logo-placeholder:hover {
     transform: scale(1.3);
 }
+.logo-placeholder:active{
+    transform: scale(0.9);
+}
 
 .logo-placeholder img {
     width: 80%;
@@ -78,11 +81,29 @@ html, body {
     color: white;
     font-size: 1rem;
     font-weight: 700;
+    text-decoration: none;
+    position: relative; /* Wajib ada untuk posisi garis */
+    display: inline-block;
+    transition: all 0.3s ease; /* Transisi untuk warna teks */
+    letter-spacing: 0.5px;
 }
-.brand-name:hover{
-    color: #ffff02;
-    transition: 0.5s ease-in-out;
-    transform: translateY(-2px);
+
+/* Hover Interaction */
+.brand-name:hover {
+    color: #fefefa;
+    transform: translateY(-1px); /* Teks sedikit naik (interaksi minim tapi berkelas) */
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); /* Efek glow tipis */
+}
+
+/* Garis berjalan saat di-hover */
+.brand-name:hover::after {
+    width: 100%; /* Melebar penuh saat kursor di atasnya */
+}
+
+/* Efek saat diklik (Active state) */
+.brand-name:active {
+    transform: scale(0.9);
+    opacity: 0.8;
 }
 /* ==========================================================================
    3. NAVIGATION MENU (DESKTOP)
@@ -123,7 +144,7 @@ html, body {
 /* ==========================================================================
    4. MEGA DROPDOWN (CLICK SYSTEM)
    ========================================================================== */
-.dropdown-content {
+   .dropdown-content {
     position: absolute;
     top: 80px;
     left: 0;
@@ -176,6 +197,11 @@ html, body {
 .dropdown-content a:hover {
     color: #f1c40f;
     padding-left: 10px;
+    border-radius: 2px;
+    background-color: #ffffff0c;
+}
+.dropdown-content a:active{
+    transform: scale(0.9);
 }
 
 /* ==========================================================================
@@ -214,7 +240,7 @@ html, body {
         width: 80%;
         max-width: 300px;
         height: 100vh;
-        background-color: #1a431e;
+        background-color: #336633;
         flex-direction: column;
         padding: 100px 20px 20px;
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -415,6 +441,9 @@ body {
     background: #2eb43e;
 }
 
+.btn-glow:active{
+    transform: scale(0.9);
+}
 .btn-play-circle {
     width: 65px;
     height: 65px;
@@ -816,7 +845,7 @@ body {
 
 /* Contact Section */
 :root {
-    --dmi-green: #1b4332;
+    --dmi-contact: #1b4332;
     --dmi-green-terang: #2d6a4f;
     --dmi-accent: #f1c40f;
     --soft-bg: #f8fafc;
@@ -842,12 +871,12 @@ body {
 /* Header Styling */
 .header-content { text-align: center; margin-bottom: 80px; }
 .accent-tag { 
-    background: rgba(27, 67, 50, 0.1); color: var(--dmi-green);
+    background: rgba(27, 67, 50, 0.1); color: var(--dmi-contact);
     padding: 10px 25px; border-radius: 100px; font-weight: 800; font-size: 0.85rem;
     letter-spacing: 2px; text-transform: uppercase;
 }
 .title-modern { font-size: 3.5rem; font-weight: 900; margin-top: 25px; color: #0f172a; line-height: 1.1; }
-.text-dmi { color: var(--dmi-green); }
+.text-dmi { color: var(--dmi-contact); }
 
 /* Bento Layout - Wide Setting */
 .bento-layout { 
@@ -920,7 +949,7 @@ body {
 .card-icon-wrap {
     width: 80px; height: 80px;
     background: #f0fdf4;
-    color: var(--dmi-green);
+    color: var(--dmi-contact);
     border-radius: 24px;
     display: flex; align-items: center; justify-content: center;
     font-size: 2rem; transition: 0.4s;
@@ -953,7 +982,7 @@ body {
 }
 .premium-card:hover .card-action-icon {
     background: var(--dmi-accent);
-    color: var(--dmi-green);
+    color: var(--dmi-contact);
     transform: rotate(-45deg);
 }
 
@@ -1080,13 +1109,16 @@ body {
     }
 }
 
-/* ========================================================== */
-/* footer */
+/* ========================================================== 
+   DMI FOOTER - ULTIMATE HYBRID LAYOUT & INTERACTION
+   ========================================================== */
+
 .main-footer {
-    background-color: #215a28; /* Hijau DMI */
+    background-color: #336633; /* Hijau Khas DMI */
     color: #ffffff;
-    padding: 24px 20px 30px;
-    font-family: 'Inter', sans-serif;
+    padding: 50px 20px;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+    position: relative;
 }
 
 .footer-container {
@@ -1094,142 +1126,169 @@ body {
     margin: 0 auto;
 }
 
-/* Bagian Logo */
-.footer-top {   
-    text-align: center;
+/* --- BAGIAN ATAS (LOGO & TITLE) --- */
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.footer-logo-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 15px;
+    /* Transition ditaruh di sini agar saat kursor dilepas tetap smooth */
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .footer-logo {
-    width: 76px; /* Sesuaikan ukuran logo */
+    width: 80px;
     height: auto;
-    margin-bottom: 15px;
+    display: block;
 }
 
-.footer-top h2 {
+.footer-logo-link:hover {
+    transform: scale(1.3); /* Sesuai request: Scale 1.3 */
+}
+/* Feedback saat diklik */
+    .footer-logo-link:active {
+        transform: scale(0.9);
+    }
+.footer-title-link {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.footer-title-link h2 {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     margin: 0;
+    transition: all 0.4s ease;
+}
+.footer-title-link h2:active{
+    transform: scale(0.9);
 }
 
-/* Garis Pemisah */
+.footer-title-link:hover {
+    transform: translateY(-2px); /* Interaksi minim nan elegan */
+    opacity: 0.9;
+}
+
+.footer-title-link:hover h2 {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
 .footer-divider {
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 40px;
 }
 
-/* Bagian Bawah (Alamat & Sosial) */
+/* --- BAGIAN BAWAH (LAYOUT DESKTOP: ROW) --- */
 .footer-bottom {
     display: flex;
-    justify-content: flex-start; /* Ubah dari space-between ke flex-start */
+    flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 40px 60px;
 }
-.footer-info-item:first-child {
-    min-width: 250px;
+
+.footer-contact-group {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
 }
 
 .footer-info-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    max-width: 400px;
+    gap: 15px;
 }
 
-.teks-address-footer {
-    padding: 5px 0;
-    width: 80%;
-    font-size: 0.85rem;
-    margin: 0;
-    opacity: 0.9;
-}
-.teks-bawah-footer {
-    font-size: 0.85rem;
-    padding: 3px 0;
-    margin: 0;
-    opacity: 0.9;
+.info-icon-wrapper {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 5px; /* Menyejajarkan ikon dengan baris pertama teks */
 }
 
 .info-icon {
-    font-size: 1rem;
-    margin-top: 5px;
-    width: 20px; /* Menjaga teks tetap lurus secara vertikal */
-    text-align: center;
-    color: var(--dmi-gold, #f1c40f); /* Memberi sedikit aksen agar tidak monoton */
-    flex-shrink: 0;
-}
-.footer-contact-group {
-    display: flex;
-    flex-direction: row; /* Kunci Sejajar Row */
-    gap: 30px;           /* Jarak antara nomor telp dan email */
-    flex-wrap: wrap;     /* Agar tetap aman jika layar menyempit */
+    font-size: 1.1rem;
+    color: #ffffff;
 }
 
-/* Media Sosial */
+.teks-footer {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* SOSMED INTERACTION */
 .footer-socials {
     display: flex;
     gap: 20px;
-    margin-left: auto;   /* Memaksa sosmed ke pojok kanan desktop */
 }
 
 .footer-socials a {
     color: #ffffff;
     font-size: 1.4rem;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .footer-socials a:hover {
     opacity: 0.7;
+    transform: translateY(-5px);
 }
 
-/* --- RESPONSIVE FOOTER (768px & Mobile) --- */
+.footer-socials a:active{
+    transform: scale(0.9);
+}
+
+/* --- RESPONSIVE MOBILE (COLUMN LAYOUT) --- */
+@media (max-width: 992px) {
+    .footer-bottom {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
-    .footer-container h2 {
-        font-size: 1rem;
+    .main-footer { padding: 40px 15px; }
+
+    .footer-logo { width: 65px; }
+
+    .footer-bottom {
+        flex-direction: column; /* Tetap Column di Mobile sesuai request */
+        align-items: flex-start;
+        gap: 25px;
     }
-    .footer-top{
-        margin-bottom: 10px;
+
+    .footer-contact-group {
+        flex-direction: column; /* Kontak juga tumpuk di Mobile */
+        gap: 15px;
     }
-    .footer-logo {
-        width: 66px; /* Sesuaikan ukuran logo */
-        height: auto;
-        margin-bottom: 5px;
+
+    .info-icon-wrapper {
+        margin-top: 3px;
     }
-    .footer-divider{
-        margin-bottom: 10px;
+
+    .teks-footer {
+        font-size: 0.8rem;
     }
-    .teks-address-footer{
-        margin-top: 10px;
-    }
-    .teks-bawah-footer {
-    font-size: 0.75rem;
-    padding-top: 20px;
-    margin: 0;
-    opacity: 0.9;
-    }
-    .footer-bottom{
-        flex-direction: column; /* Tumpuk semua ke bawah */
-        gap: 0px; /* Jarak antar blok info di mobile */
-        
-    }
-    .footer-contact-group{
-        margin-top: 5px;
-        gap: 1px;
-    }
-    .footer-info-item:first-child,
-    .footer-contact-group,
+
     .footer-socials {
-        flex: none;
         width: 100%;
-        justify-content: flex-start; /* Semua rata kiri di mobile */
+        justify-content: center; /* Sosmed di tengah agar balance */
+        margin-top: 20px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 35px;
     }
-    .footer-socials {
-        margin-top: 10px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Pemisah halus untuk sosmed */
-    }
+    
+    
 }

@@ -9,13 +9,6 @@
     <div class="det-ev-main-wrapper">
         
         <header class="ev-header-area">
-            <div class="ev-nav-wrapper">
-                <a href="/kegiatan/event-bulan-ini" class="btn-back-dynamic">
-                    <i class="fas fa-chevron-left"></i> 
-                    <span>Kembali ke Agenda</span>
-                </a>
-            </div>
-
             <div class="ev-meta-top">
                 <span class="ev-category">International Gathering</span>
                 <span class="ev-dot"></span>

@@ -1,5 +1,4 @@
     <link rel="stylesheet" href="{{ asset('css/kegiatan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/berita.css') }}">
  
  
  @extends('layouts.app')
@@ -32,7 +31,7 @@
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=400&h=300&auto=format&fit=crop" alt="Kajian">
-          <div class="ev-date-tag">07 Jan</div>
+          <div class="ev-date-tag">Kajian</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Grand Islamic Gathering</h3>
@@ -48,7 +47,7 @@
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&q=80&w=400&h=300" alt="Sosial">
-          <div class="ev-date-tag">15 Jan</div>
+          <div class="ev-date-tag">Sosial</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Bakti Sosial Nasional</h3>
@@ -64,7 +63,7 @@
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200&auto=format&fit=crop" alt="Pleno">
-          <div class="ev-date-tag">22 Jan</div>
+          <div class="ev-date-tag">Rapat Pleno</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Rapat Pleno Program</h3>
@@ -76,11 +75,11 @@
           <a href="/kegiatan/detail-event"><button class="ev-btn-primary js-reveal">Lihat Detail</button></a>
         </div>
       </article>
-      
+
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=400&h=300&auto=format&fit=crop" alt="Kajian">
-          <div class="ev-date-tag">07 Jan</div>
+          <div class="ev-date-tag">Kajian</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Grand Islamic Gathering</h3>
@@ -96,7 +95,7 @@
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&q=80&w=400&h=300" alt="Sosial">
-          <div class="ev-date-tag">15 Jan</div>
+          <div class="ev-date-tag">Sosial</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Bakti Sosial Nasional</h3>
@@ -112,7 +111,7 @@
       <article class="ev-card">
         <div class="ev-img-box js-reveal">
           <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200&auto=format&fit=crop" alt="Pleno">
-          <div class="ev-date-tag">22 Jan</div>
+          <div class="ev-date-tag">Rapat Pleno</div>
         </div>
         <div class="ev-card-body">
           <h3 class="ev-item-title js-reveal">Rapat Pleno Program</h3>
@@ -124,26 +123,28 @@
           <a href="/kegiatan/detail-event"><button class="ev-btn-primary js-reveal">Lihat Detail</button></a>
         </div>
       </article>
+  </section>
 
-    </main>
-
-    <div class="pagination-modern-wrapper js-reveal">
-            <div class="pagination-items">
-                <a href="#" class="pag-btn prev"><i class="fas fa-chevron-left"></i></a>
-                
-                <div class="pag-numbers">
-                    <a href="#" class="pag-link active">1</a>
-                    <a href="#" class="pag-link">2</a>
-                    <a href="#" class="pag-link">3</a>
-                    <span class="pag-dots">...</span>
-                    <a href="#" class="pag-link">12</a>
-                </div>
-
-                <a href="#" class="pag-btn next"><i class="fas fa-chevron-right"></i></a>
+  <section class="dmi-pagination-area">
+    <div class="dmi-pagination-container js-reveal">
+        <div class="dmi-pagination-wrapper">
+            <a href="#" class="pag-control prev" title="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            
+            <div class="pag-number-group">
+                <a href="#" class="pag-link">1</a>
+                <a href="#" class="pag-link active">2</a>
+                <a href="#" class="pag-link">3</a>
+                <span class="pag-dots">•••</span>
+                <a href="#" class="pag-link">12</a>
             </div>
+
+            <a href="#" class="pag-control next" title="Next">
+                <i class="fas fa-chevron-right"></i>
+            </a>
         </div>
-  
-  </div>
+    </div>
 </section>
     
 

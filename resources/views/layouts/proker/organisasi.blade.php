@@ -51,7 +51,8 @@
                 <h3>Kemandirian Ekonomi</h3>
                 <p>Pemberdayaan berbasis jamaah di seluruh ranting.</p>
             </div>
-            <div class="feat-card js-reveal">
+            
+            <div class="feat-card js-reveal card-akhir">
                 <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Keamanan Siber</h3>
                 <p>Proteksi data organisasi dalam transformasi digital.</p>

@@ -181,4 +181,11 @@
         padding-bottom: 8px;
         font-size: 0.8rem;
     }
+    .org-name{
+        font-size: 0.9rem;
+        padding-top: 10px;
+    }
+    .badge-period{
+        font-size: 0.7rem;
+    }
 }

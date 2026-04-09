@@ -7,6 +7,9 @@
         <div class="mrj-header js-reveal">
             <span class="mrj-tag">Program Strategis DMI</span>
             <h2 class="mrj-title">Masjid Ramah <span>Jamaah</span></h2>
+            <center>
+            <div class="title-divider" style="margin-left: 0;"></div>
+            </center>
         </div>
 
         <div class="mrj-grid">

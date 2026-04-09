@@ -17,7 +17,9 @@
         <p class="hero-subtitle">Menyatukan Masjid, Menguatkan Umat. Membangun peradaban yang berlandaskan iman dan kebersamaan di seluruh penjuru negeri.</p>
         <div class="hero-actions">
             <a href="#carousel" class="btn-glow">Jelajahi Program <i class="fas fa-arrow-right"></i></a>
-            <a href="/Redaksi/Berita" style="text-decoration: none;"><button class="btn-play-circle" id="openVideo"><i class="fas fa-play"></i></button></a>
+            
+            <!-- button play -->
+            <!-- <a href="/Redaksi/Berita" style="text-decoration: none;"><button class="btn-play-circle" id="openVideo"><i class="fas fa-play"></i></button></a> -->
         </div>
     </div>
     
@@ -166,6 +168,7 @@
                     <div class="card-icon-wrap">
                         <i class="fab fa-whatsapp"></i>
                     </div>
+                    
                     <div class="card-details">
                         <span class="card-label">Hotline 24/7</span>
                         <h3>+62 811 1057 102</h3>
@@ -181,16 +184,16 @@
                             <h4>hello@dmi.tv</h4>
                         </div>
                     </a>
-                    <a href="#" class="premium-card js-reveal">
+                    <a href="https://www.instagram.com/dmitvofficial_" class="premium-card js-reveal">
                         <div class="card-icon-wrap sm"><i class="fab fa-instagram"></i></div>
                         <div class="card-details">
                             <span class="card-label">Instagram</span>
-                            <h4>@DMI.Pusat</h4>
+                            <h4>@dmitvofficial_</h4>
                         </div>
                     </a>
                 </div>
 
-                <a href="#" class="premium-card js-reveal">
+                <a href="https://www.tiktok.com/@dmitvofficial" class="premium-card js-reveal">
                     <div class="card-icon-wrap sm"><i class="fab fa-tiktok"></i></div>
                     <div class="card-details">
                         <span class="card-label">TikTok Official</span>

@@ -30,7 +30,7 @@
                         <h4>Manajemen Idarah</h4>
                         <p>Penataan administrasi, organisasi, dan legalitas kepengurusan masjid yang akuntabel.</p>
                     </div>
-                    <div class="program-arrow"><i class="fas fa-chevron-right"></i></div>
+            
                 </div>
 
                 <div class="program-card js-reveal">
@@ -39,7 +39,7 @@
                         <h4>Manajemen Imarah</h4>
                         <p>Optimalisasi fungsi peribadatan, dakwah, dan kegiatan sosial kemasyarakatan.</p>
                     </div>
-                    <div class="program-arrow"><i class="fas fa-chevron-right"></i></div>
+            
                 </div>
 
                 <div class="program-card js-reveal">
@@ -48,14 +48,14 @@
                         <h4>Manajemen Riayah</h4>
                         <p>Pemeliharaan fisik, arsitektur, dan kebersihan lingkungan masjid yang berkelanjutan.</p>
                     </div>
-                    <div class="program-arrow"><i class="fas fa-chevron-right"></i></div>
+            
                 </div>
                 
-                <div class="training-cta-box js-reveal">
+                <!-- <div class="training-cta-box js-reveal">
                     <button class="btn-main-download" style="width: 100%; border: none;">
                         Daftar Pelatihan Sekarang <i class="fas fa-paper-plane" style="margin-left:10px;"></i>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -97,29 +97,6 @@
 
                 </div>
             </div>
-
-            <div class="sidebar-section">
-                <h3 class="section-heading">Layanan Masjid</h3>
-                <div class="action-grid">
-                    <a href="#" class="action-item">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <span>Infaq Online</span>
-                    </a>
-                    <a href="#" class="action-item">
-                        <i class="fas fa-mosque"></i>
-                        <span>Daftar Masjid</span>
-                    </a>
-                    <a href="#" class="action-item">
-                        <i class="fas fa-file-invoice"></i>
-                        <span>Laporan Kas</span>
-                    </a>
-                    <a href="#" class="action-item">
-                        <i class="fas fa-bullhorn"></i>
-                        <span>Ajukan Berita</span>
-                    </a>
-                </div>
-            </div>
-
         </div>
     </aside>
 

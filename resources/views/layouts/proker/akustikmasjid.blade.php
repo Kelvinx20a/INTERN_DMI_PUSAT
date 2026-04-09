@@ -76,10 +76,10 @@
                     </div>
 
                     <div class="sidebar-next-article js-reveal">
-                        <span class="label">Agenda Selanjutnya</span>
+                        <!-- <span class="label">Agenda Selanjutnya</span>
                         <a href="#" class="next-link">
                             Muktamar VIII DMI 2024 <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </aside>

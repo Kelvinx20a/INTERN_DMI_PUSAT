@@ -29,4 +29,15 @@ class ProkerDMIController extends Controller
     public function index7(){
         return view ('layouts/proker/masjid-bersih-dan-sehat');
     }
+
+    public function index8(){
+        return view ('layouts/proker/pendidikan-dan-dakwah');
+    }
+    public function index9(){
+        return view ('layouts/proker/arsitektur-masjid');
+    }
+    public function index10(){
+        return view ('layouts/proker/wisata-religi');
+    }
+
 }

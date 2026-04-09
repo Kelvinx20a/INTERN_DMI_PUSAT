@@ -4,12 +4,6 @@
   @extends('layouts.app')
     @section('content')
 
-  <!-- breadcrumbs -->
-   
-
-
-<!-- end bread-crumbs -->
-
 <center>
 <section class="dmi-work-section">
     <div class="container">

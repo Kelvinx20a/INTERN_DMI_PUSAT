@@ -1,50 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Inisialisasi Swiper
-    const swiper = new Swiper('.editorialSwiper', {
-        parallax: true,
-        watchSlidesProgress: true, // Tambahkan ini
-        speed: 1500,
+    const swiper = new Swiper('.headline-slider', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         loop: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
         },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
+        speed: 1000,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.nav-next',
-            prevEl: '.nav-prev',
+        // Tambahan fitur agar stabil di mobile:
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        on: {
+            init: function () {
+                // Memaksa swiper menghitung ulang setelah 100ms
+                setTimeout(() => {
+                    this.update();
+                }, 100);
+            },
         },
     });
-
-    // 2. Logika Loading Gambar (Smooth Reveal)
-    const allImages = document.querySelectorAll('.image-wrapper img');
-    
-    allImages.forEach(img => {
-        // Jika gambar sudah ada di cache browser
-        if (img.complete) {
-            revealImage(img);
-        } else {
-            // Jika baru akan dimuat
-            img.addEventListener('load', function() {
-                revealImage(img);
-            });
-        }
-    });
-
-    function revealImage(img) {
-        img.classList.add('loaded');
-        img.parentElement.classList.add('is-loaded');
-    }
 });
-
-
-// ---------------
-// Section Baru
-
