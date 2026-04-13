@@ -1,3 +1,6 @@
+// ================================
+// Swiper JS untuk slider headline berita
+
 document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper('.headline-slider', {
         effect: 'fade',
@@ -28,3 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 });
+
+
+// ================================
+// Swiper JS untuk slider berita terbaru
+
+document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.dmiHeadlineSlider', {
+            loop: true,
+            speed: 1000,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            observer: true,
+            observeParents: true
+        });
+    });
