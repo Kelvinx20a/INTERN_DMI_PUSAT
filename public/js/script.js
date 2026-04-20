@@ -177,19 +177,40 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const eventDatabase = {
-        // Januari 2026 (00)
-        "2026-00-07": { title: "Grand Islamic Gathering", tag: "Event", time: "11:59 WIB", loc: "Gedung DMI Pusat" },
-        "2026-00-15": { title: "Pelatihan Manajemen Masjid", tag: "Edukasi", time: "09:00 WIB", loc: "Aula Utama" },
-        "2026-00-28": { title: "Rapat Pleno Awal Tahun", tag: "Rapat", time: "13:00 WIB", loc: "Ruang Rapat Lt.3" },
+    // Januari 2026 (00)
+    "2026-00-07": { title: "Grand Islamic Gathering", tag: "Event", time: "11:59 WIB", loc: "Gedung DMI Pusat", fullDate: "07 Januari 2026" },
+    "2026-00-15": { title: "Pelatihan Manajemen Masjid", tag: "Edukasi", time: "09:00 WIB", loc: "Aula Utama", fullDate: "15 Januari 2026" },
+    "2026-00-21": { title: "Seminar Literasi Digital", tag: "Edukasi", time: "10:00 WIB", loc: "Perpustakaan Nasional", fullDate: "21 Januari 2026" },
+    "2026-00-28": { title: "Rapat Pleno Awal Tahun", tag: "Rapat", time: "13:00 WIB", loc: "Ruang Rapat Lt.3", fullDate: "28 Januari 2026" },
 
-        // Februari 2026 (01)
-        "2026-01-05": { title: "Kajian Ekonomi Syariah", tag: "Kajian", time: "16:00 WIB", loc: "Masjid Agung" },
-        "2026-01-12": { title: "Bakti Sosial Nasional", tag: "Sosial", time: "08:00 WIB", loc: "Area Jabodetabek" },
-        "2026-01-20": { title: "Workshop Digital Dakwah", tag: "Edukasi", time: "10:00 WIB", loc: "Zoom Meeting" },
-        "2026-01-25": { title: "Silaturahmi Pengurus Daerah", tag: "Rapat", time: "19:30 WIB", loc: "Hotel Sultan" },
+    // Februari 2026 (01)
+    "2026-01-05": { title: "Kajian Ekonomi Syariah", tag: "Kajian", time: "16:00 WIB", loc: "Masjid Agung", fullDate: "05 Februari 2026" },
+    "2026-01-12": { title: "Bakti Sosial Nasional", tag: "Sosial", time: "08:00 WIB", loc: "Area Jabodetabek", fullDate: "12 Februari 2026" },
+    "2026-01-20": { title: "Workshop Digital Dakwah", tag: "Edukasi", time: "10:00 WIB", loc: "Zoom Meeting", fullDate: "20 Februari 2026" },
+    "2026-01-25": { title: "Silaturahmi Pengurus Daerah", tag: "Rapat", time: "19:30 WIB", loc: "Hotel Sultan", fullDate: "25 Februari 2026" },
 
-        // Maret 2026 (02)
-        "2026-02-03": { title: "Persiapan Tarhib Ramadhan", tag: "Event", time: "10:00 WIB", loc: "Gedung DMI Pusat" }
+    // Maret 2026 (02) - Memasuki Ramadhan
+    "2026-02-03": { title: "Persiapan Tarhib Ramadhan", tag: "Event", time: "10:00 WIB", loc: "Gedung DMI Pusat", fullDate: "03 Maret 2026" },
+    "2026-02-10": { title: "Pembekalan Dai Ramadhan", tag: "Edukasi", time: "08:30 WIB", loc: "Aula Syarif", fullDate: "10 Maret 2026" },
+    "2026-02-17": { title: "Buka Puasa Bersama Anak Yatim", tag: "Sosial", time: "17:00 WIB", loc: "Yayasan Amanah", fullDate: "17 Maret 2026" },
+    "2026-02-25": { title: "Lomba Adzan Tingkat Remaja", tag: "Event", time: "09:00 WIB", loc: "Masjid Al-Azhar", fullDate: "25 Maret 2026" },
+
+    // April 2026 (03) - Syawal / Lebaran
+    "2026-03-05": { title: "Halal Bihalal Idul Fitri", tag: "Event", time: "10:00 WIB", loc: "Gedung DMI Pusat", fullDate: "05 April 2026" },
+    "2026-03-15": { title: "Rapat Evaluasi Ramadhan", tag: "Rapat", time: "13:00 WIB", loc: "Internal Office", fullDate: "15 April 2026" },
+    "2026-03-22": { title: "Pelatihan Pemulasaraan Jenazah", tag: "Edukasi", time: "08:00 WIB", loc: "Masjid Raya", fullDate: "22 April 2026" },
+    "2026-03-28": { title: "Workshop Digital Masjid Batch 2", tag: "Edukasi", time: "10:00 WIB", loc: "Online (Zoom)", fullDate: "28 April 2026" },
+
+    // Mei 2026 (04)
+    "2026-04-08": { title: "Diskusi Panel Kebangsaan", tag: "Kajian", time: "14:00 WIB", loc: "Auditorium Pusat", fullDate: "08 Mei 2026" },
+    "2026-04-14": { title: "Santunan Kesehatan Masyarakat", tag: "Sosial", time: "09:00 WIB", loc: "Puskesmas Terpadu", fullDate: "14 Mei 2026" },
+    "2026-04-25": { title: "Rapat Koordinasi Nasional", tag: "Rapat", time: "09:00 WIB", loc: "Convention Hall", fullDate: "25 Mei 2026" },
+
+    // Juni 2026 (05)
+    "2026-05-10": { title: "Persiapan Idul Adha", tag: "Event", time: "13:00 WIB", loc: "Gedung DMI Pusat", fullDate: "10 Juni 2026" },
+    "2026-05-18": { title: "Pelatihan Sembelih Halal", tag: "Edukasi", time: "08:00 WIB", loc: "RPH Cakung", fullDate: "18 Juni 2026" },
+    "2026-05-24": { title: "Distribusi Hewan Kurban", tag: "Sosial", time: "07:00 WIB", loc: "Seluruh Cabang", fullDate: "24 Juni 2026" },
+    "2026-05-30": { title: "Closing Ceremony Semester 1", tag: "Event", time: "19:00 WIB", loc: "Grand Ballroom", fullDate: "30 Juni 2026" }
     };
 
     // 3. Fungsi Utama Render Kalender

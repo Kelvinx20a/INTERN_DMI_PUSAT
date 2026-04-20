@@ -145,6 +145,6 @@
         </div>
     </div>
 </section>
-    
 
-    @endsections
+  
+@endsection
